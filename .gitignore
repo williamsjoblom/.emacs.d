@@ -1,0 +1,8 @@
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+network-security.data
+*.eld
+session.*
+.lsp-session*
+elpa/
