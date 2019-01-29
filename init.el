@@ -36,6 +36,7 @@
 
 (eval-when-compile
   (require 'use-package))
+
 (require 'bind-key)
 
 (require 'general-funs)
@@ -43,6 +44,7 @@
 (require 'docker-init)
 (require 'company-init)
 (require 'lsp-init)
+(require 'flycheck-init)
 (require 'c++-init)
 (require 'elisp-init)
 (require 'projectile-init)
