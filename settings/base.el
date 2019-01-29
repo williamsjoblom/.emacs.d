@@ -15,7 +15,10 @@
 
 (setq-default indent-tabs-mode nil)
 
-;; Winner mode
+;; Enable highlighting of matching parenteses.
+(show-paren-mode 1)
+
+;; Enable undo/redo for window modifications.
 (winner-mode)
 
 (provide 'base)
