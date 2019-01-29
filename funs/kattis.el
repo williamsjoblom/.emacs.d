@@ -12,6 +12,7 @@
 
 (defun kattis-submit (&optional open-browser)
   (or open-browser (setq open-browser nil))
+  (message (format "Submitting %s to Kattis..." (buffer-name)))
   (process-send-string
    (start-process "kattis" "*kattis*"
                   "python3" kattis-executable
