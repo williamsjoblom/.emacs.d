@@ -50,6 +50,8 @@
 (require 'projectile-init)
 (require 'compile-init)
 (require 'org-init)
+(require 'react-init)
+
 (require 'kattis)
 
 (require 'key-bindings)
@@ -60,7 +62,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+    (rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
