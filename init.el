@@ -50,7 +50,7 @@
 (require 'projectile-init)
 (require 'compile-init)
 (require 'org-init)
-(require 'react-init)
+(require 'js-init)
 
 (require 'kattis)
 
