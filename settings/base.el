@@ -21,4 +21,7 @@
 ;; Enable undo/redo for window modifications.
 (winner-mode)
 
+;; Disable scroll acceleration.
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+
 (provide 'base)
