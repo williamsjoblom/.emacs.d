@@ -23,6 +23,11 @@
 (global-set-key (kbd "H-M-l") 'right-word)
 (global-set-key (kbd "H-M-j") 'left-word)
 
+(global-set-key (kbd "M-<left>") 'left-word)
+(global-set-key (kbd "M-<up>") 'backward-paragraph)
+(global-set-key (kbd "M-<down>") 'forward-paragraph)
+(global-set-key (kbd "M-<right>") 'right-word)
+
 ;; Allows reopening recently killed buffers with C-x j and C-x C-j
 (global-set-key (kbd "C-x j") 'reopen-killed-file)
 (global-set-key (kbd "C-x C-j") 'reopen-killed-file-fancy)
