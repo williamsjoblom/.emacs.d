@@ -9,13 +9,17 @@
 (defun my/kotlin-mode-hook ()
   (lsp)
   (lsp-mode)
-  (company-mode))
+  (company-mode)
+  (flycheck-mode))
 
 (use-package kotlin-mode
   :ensure t
   :mode "\\.kt\\'"
   :after company-lsp
-  :hook (kotlin-mode . my/kotlin-mode-hook))
+  :hook (kotlin-mode . my/kotlin-mode-hook)
+  :config
+  (setq-default kotlin-tab-width 4)
+  (setq-default indent-tabs-mode nil))
 
 
 (provide 'kotlin-init)
