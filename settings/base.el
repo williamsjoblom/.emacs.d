@@ -13,6 +13,7 @@
 ;; Disable autosaving
 (setq auto-save-default nil)
 
+;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
 ;; Enable highlighting of matching parenteses.
