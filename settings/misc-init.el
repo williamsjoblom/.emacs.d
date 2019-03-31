@@ -1,5 +1,3 @@
-
-
 (use-package gist
   :ensure t)
 
