@@ -13,6 +13,7 @@
 ;; Disable autosaving
 (setq auto-save-default nil)
 
+;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
 ;; Enable highlighting of matching parenteses.
@@ -20,5 +21,8 @@
 
 ;; Enable undo/redo for window modifications.
 (winner-mode)
+
+;; Disable scroll acceleration.
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 
 (provide 'base)

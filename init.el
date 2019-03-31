@@ -52,6 +52,11 @@
 (require 'org-init)
 (require 'js-init)
 (require 'misc-init)
+(require 'csharp-init)
+(require 'cmake-init)
+(require 'kotlin-init)
+(require 'python-init)
+(require 'glsl-init)
 
 (require 'kattis)
 
@@ -64,7 +69,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (gist rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+    (gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

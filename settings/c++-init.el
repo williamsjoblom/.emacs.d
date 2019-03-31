@@ -14,7 +14,6 @@
   (add-to-list 'company-backends 'company-lsp)
   (lsp)
   (lsp-mode)
-  (lsp-ui-mode)
   
   (local-set-key (kbd "M-i") 'xref-find-definitions)
   (local-set-key (kbd "C-M-i") 'xref-pop-marker-stack)
