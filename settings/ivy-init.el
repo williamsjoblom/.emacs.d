@@ -2,8 +2,7 @@
   :ensure t
   :init
   (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
-  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
-  (ivy-mode 1))
+  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 
 (use-package swiper
   :ensure t
@@ -24,6 +23,12 @@
   :after projectile counsel
   :config
   (counsel-projectile-mode))
+
+(use-package ivy-rich
+  :ensure t
+  :after counsel
+  :config
+  (ivy-rich-mode 1))
 
 
 (provide 'ivy-init)
