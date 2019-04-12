@@ -6,3 +6,6 @@ network-security.data
 session.*
 .lsp-session*
 elpa/
+
+# Ignore API keys stored in secret.el
+settings/secret.el
