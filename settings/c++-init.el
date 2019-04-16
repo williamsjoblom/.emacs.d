@@ -21,6 +21,7 @@
   (local-set-key (kbd "C-c m") 'cmake-ide-compile)
   (local-set-key (kbd "C-c i") 'indent-buffer)
   (local-set-key (kbd "C-c k") 'kattis-submit-and-open-browser)
+  (column-number-mode)
   
   ;; Bind C-m to 'compile', <return> needs to be bound to
   ;; 'newline' since it is bound to C-m by default.
