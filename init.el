@@ -60,8 +60,16 @@
 
 (require 'kattis)
 
+;; Load API keys from secret.el if present on the system.
+(require 'secret nil 'noerror)
 
 (require 'key-bindings)
+
+;; Scrolling on some mice results in a 'C-M-[()]'
+;; bind these to scroll.
+(global-set-key (kbd "C-M-(") 'mwheel-scroll)
+(global-set-key (kbd "C-M-)") 'mwheel-scroll)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,7 +77,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+    (counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

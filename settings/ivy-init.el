@@ -6,6 +6,12 @@
   :config
   (ivy-mode 1))
 
+(use-package ivy-rich
+  :ensure t
+  :after ivy
+  :config
+  (ivy-rich-mode 1))
+
 (use-package swiper
   :ensure t
   :after ivy
@@ -19,18 +25,16 @@
   :bind (:map global-map
 	      ("M-x" . counsel-M-x)))
 
-
 (use-package counsel-projectile
   :ensure t
   :after projectile counsel
   :config
   (counsel-projectile-mode))
 
-(use-package ivy-rich
+(use-package counsel-spotify
   :ensure t
-  :after ivy
-  :config
-  (ivy-rich-mode 1))
-
+  :after counsel
+  :bind (:map global-map
+              ("C-x C-\\" . counsel-spotify-search-track)))
 
 (provide 'ivy-init)
