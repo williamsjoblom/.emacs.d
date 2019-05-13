@@ -8,6 +8,10 @@
 (setq c-basic-offset  4
       c-default-style "linux")
 
+(c-set-offset 'cpp-macro 0 nil)
+
+
+
 (defun my/c++-mode-hook ()
   (flycheck-mode)
   (company-mode)
