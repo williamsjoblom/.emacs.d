@@ -15,4 +15,6 @@
   :config
   '(add-to-list 'company-backends 'company-anaconda))
 
+(setq python-shell-interpreter "python3")
+
 (provide 'python-init)
