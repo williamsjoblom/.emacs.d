@@ -25,6 +25,12 @@
   :bind (:map global-map
 	      ("M-x" . counsel-M-x)))
 
+(use-package counsel-tramp
+  :ensure t
+  :after counsel
+  :bind (:map global-map
+	      ("C-x t" . counsel-tramp)))
+
 (use-package counsel-projectile
   :ensure t
   :after projectile counsel
