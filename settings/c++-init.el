@@ -11,13 +11,8 @@
 (c-set-offset 'cpp-macro 0 nil)
 
 
-
 (defun my/c++-mode-hook ()
-  (flycheck-mode)
-  (company-mode)
-  (add-to-list 'company-backends 'company-lsp)
-  (lsp)
-  (lsp-mode)
+  (interactive)
   
   (local-set-key (kbd "M-i") 'xref-find-definitions)
   (local-set-key (kbd "C-M-i") 'xref-pop-marker-stack)
@@ -34,7 +29,13 @@
 	 (local-set-key (kbd "C-m") 'compile)))
 
   (local-set-key (kbd "C-M-k") 'c-doc-comment)
-  (local-set-key (kbd "C-M-j") 'c-block-comment))
+  (local-set-key (kbd "C-M-j") 'c-block-comment)
+
+  (flycheck-mode)
+  (company-mode)
+  (add-to-list 'company-backends 'company-lsp)
+  (lsp)
+  (lsp-mode))
 
 (add-hook 'c++-mode-hook 'my/c++-mode-hook)
 
