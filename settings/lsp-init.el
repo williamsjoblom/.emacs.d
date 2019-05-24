@@ -1,4 +1,5 @@
 (use-package lsp-mode
+  :after yasnippet
   :ensure t)
 
 (use-package lsp-ui
