@@ -9,6 +9,6 @@
   (add-to-list 'org-emphasis-alist
              '("_" (:foreground "red"))))
 
-(add-hook 'org-mode-hook)
+(add-hook 'org-mode-hook 'my/org-mode-hook)
 
 (provide 'org-init)
