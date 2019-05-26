@@ -24,6 +24,43 @@
 
 
 ;;--------------------------------------------------------------------------------
+;; Save/load.
+;;--------------------------------------------------------------------------------
+
+(defun my/bookmark-save-all ()
+  (save-excursion
+    (let ((buffer (find-file-noselect
+                   (my/bookmark-file))))
+      (switch-to-buffer buffer)
+      (erase-buffer)
+      (goto-char (point-min))
+      (insert "(setq my/bookmark-list '(\n")
+
+      (dolist (bookmark my/bookmark-list)
+        (insert "  ") ;; Indentation for readability.
+        (my/bookmark-append bookmark))
+      
+      (insert "))")
+      (save-buffer)
+      (kill-buffer))))
+
+
+(defun my/bookmark-append (bookmark)
+  (let ((name (my/bookmark-name bookmark))
+        (file-name (my/bookmark-file-name bookmark))
+        (p (my/bookmark-point bookmark)))
+    (insert "(\"" name "\" . (\"" file-name "\" . " (number-to-string p) "))\n")))
+
+
+(defun my/bookmark-load-all ()
+  (interactive)
+  (save-excursion
+    (let ((buffer (find-file-noselect
+                   (my/bookmark-file))))
+      (eval-buffer buffer)
+      (kill-buffer buffer))))
+
+;;--------------------------------------------------------------------------------
 ;; Variables.
 ;;--------------------------------------------------------------------------------
 
@@ -32,24 +69,19 @@
 ;;--------------------------------------------------------------------------------
 ;; Paths.
 ;;--------------------------------------------------------------------------------
-
-(defun my/bookmark-current-file ()
-  "Get path of local bookmarks file (or global file if not in a project)."
-  (if (projectile-project-root)
-      (concat
-       (file-name-as-directory (projectile-project-root))
-       ".project-bookmarks")
-    (my/bookmark-global-file)))
-
-(defun my/bookmark-global-file ()
+(defun my/bookmark-file ()
   "Get path of global bookmarks file."
   (concat
      (file-name-as-directory user-emacs-directory)
-     ".global-bookmarks"))
+     ".bookmarks"))
 
 ;;--------------------------------------------------------------------------------
 ;; Utility.
 ;;--------------------------------------------------------------------------------
+
+(defun my/bookmark-name (bookmark)
+  "Get name of bookmark."
+  (car bookmark))
 
 (defun my/bookmark-file-name (bookmark)
   "Get file name from bookmark."
@@ -72,5 +104,4 @@
   ;; (setq my/bookmark-list nil)
   (my/bookmark-jump "f1"))
 
-(global-set-key (kbd "<f1>") 'my/bookmark-jump-f1)
-(global-set-key (kbd "C-<f1>") 'my/bookmark-set-f1)
+(provide 'my-bookmark)
