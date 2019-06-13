@@ -10,7 +10,7 @@
 (defun my/c++-mode-hook ()
   (interactive)
 
-  (setq-local c-basic-offset  4
+  (setq c-basic-offset  4
               c-default-style "linux")
   
   (local-set-key (kbd "M-i") 'xref-find-definitions)
