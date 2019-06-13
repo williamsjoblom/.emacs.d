@@ -5,14 +5,13 @@
   :config
   (cmake-ide-setup))
 
-(setq c-basic-offset  4
-      c-default-style "linux")
-
 (c-set-offset 'cpp-macro 0 nil)
-
 
 (defun my/c++-mode-hook ()
   (interactive)
+
+  (setq-local c-basic-offset  4
+              c-default-style "linux")
   
   (local-set-key (kbd "M-i") 'xref-find-definitions)
   (local-set-key (kbd "C-M-i") 'xref-pop-marker-stack)

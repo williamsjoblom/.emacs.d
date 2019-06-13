@@ -10,6 +10,9 @@
     (end-of-line 1)))
 
 (defun my/pike-mode-hook ()
+  (setq-local c-basic-offset  4
+              c-default-style "bsd")
+
   (local-set-key (kbd "C-c i") 'indent-buffer)
   (column-number-mode)
   
