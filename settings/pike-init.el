@@ -13,6 +13,10 @@
   (setq c-default-style "bsd"
         c-basic-offset 4)
 
+  (flyspell-prog-mode)
+  (define-key flyspell-mode-map (kbd "C-.") nil)
+  (define-key flyspell-mode-map (kbd "C-,") nil)
+
   (local-set-key (kbd "C-c i") 'indent-buffer)
   (column-number-mode)
   
