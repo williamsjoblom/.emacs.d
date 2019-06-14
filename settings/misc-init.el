@@ -19,4 +19,7 @@
   (setq dashboard-set-file-icons t)
   (setq dashboard-center-content t))
 
+(use-package hl-todo
+  :ensure t)
+
 (provide 'misc-init)

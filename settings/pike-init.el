@@ -13,6 +13,8 @@
   (setq c-default-style "bsd"
         c-basic-offset 4)
 
+  (hl-todo-mode)
+  
   (flyspell-prog-mode)
   (define-key flyspell-mode-map (kbd "C-.") nil)
   (define-key flyspell-mode-map (kbd "C-,") nil)
