@@ -42,6 +42,12 @@
 
 (require 'bind-key)
 
+(use-package gruvbox-theme
+  :ensure t
+  :defer t)
+
+(load-theme 'gruvbox-light-hard t)
+
 (require 'general-funs)
 (require 'ivy-init)
 (require 'docker-init)
@@ -81,7 +87,11 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
+<<<<<<< HEAD
     (hl-todo highlight2clipboard dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+=======
+    (gruvbox-theme dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+>>>>>>> 0eb12d0f4c6ad93295527c985df48257dc05fc85
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
