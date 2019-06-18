@@ -19,6 +19,9 @@
 (add-to-list 'load-path funs-dir)
 (add-to-list 'load-path load-dir)
 
+(add-to-list 'default-frame-alist
+             '(font . "Input Mono-10"))
+
 ;;; Load configuration without dependencies.
 (require 'base)
 
@@ -57,6 +60,7 @@
 (require 'kotlin-init)
 (require 'python-init)
 (require 'glsl-init)
+(require 'pike-init)
 
 (require 'kattis)
 
@@ -77,7 +81,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
+    (hl-todo highlight2clipboard dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
