@@ -25,4 +25,7 @@
 ;; Disable scroll acceleration.
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 
+;; Kill trailing whitespace on save.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'base)
