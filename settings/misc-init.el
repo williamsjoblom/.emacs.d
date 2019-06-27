@@ -14,12 +14,16 @@
   :after all-the-icons projectile
   :config
   (dashboard-setup-startup-hook)
-  
+
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
   (setq dashboard-center-content t))
 
 (use-package hl-todo
-  :ensure t)
+  :ensure t
+  :config
+  (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
+  (add-to-list 'hl-todo-keyword-faces '("BEWARE" . "#aa0000"))
+  (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000")))
 
 (provide 'misc-init)
