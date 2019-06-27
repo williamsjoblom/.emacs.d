@@ -22,6 +22,7 @@
 (use-package hl-todo
   :ensure t
   :config
+  (customize-set-variable 'hl-todo-highlight-punctuation ":")
   (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
   (add-to-list 'hl-todo-keyword-faces '("BEWARE" . "#aa0000"))
   (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000")))
