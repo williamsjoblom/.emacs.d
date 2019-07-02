@@ -25,6 +25,7 @@
   (customize-set-variable 'hl-todo-highlight-punctuation ":!.")
   (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
   (add-to-list 'hl-todo-keyword-faces '("BEWARE" . "#aa0000"))
-  (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000")))
+  (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000"))
+  (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393")))
 
 (provide 'misc-init)
