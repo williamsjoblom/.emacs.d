@@ -22,8 +22,8 @@
 (use-package counsel
   :ensure t
   :after ivy
-  :bind (:map global-map
-	      ("M-x" . counsel-M-x)))
+  :bind (:map global-map ("M-x" . counsel-M-x))
+  :bind (:map minibuffer-local-map ("C-r" . counsel-minibuffer-history)))
 
 (use-package counsel-tramp
   :ensure t
