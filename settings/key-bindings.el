@@ -13,6 +13,12 @@
 ;; Don't show buffer kill prompt.
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
+;; Revert buffer.
+(global-set-key (kbd "C-?") '(lambda ()
+                               (interactive)
+                               (message "Buffer reverted from file")
+                               (revert-buffer t t)))
+
 ;; Poker3 bindings
 (global-set-key (kbd "H-i") 'previous-line)
 (global-set-key (kbd "H-k") 'next-line)
