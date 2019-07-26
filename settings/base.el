@@ -1,6 +1,6 @@
 ;; Remove GUI bloat
-(tool-bar-mode -1) 
-(menu-bar-mode -1) 
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (setq inhibit-splash-screen t)
 
@@ -27,5 +27,9 @@
 
 ;; Kill trailing whitespace on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(use-package highlight-escape-sequences
+  :ensure t
+  :hook (prog-mode . hes-mode))
 
 (provide 'base)
