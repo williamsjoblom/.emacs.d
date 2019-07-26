@@ -28,8 +28,4 @@
 ;; Kill trailing whitespace on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(use-package highlight-escape-sequences
-  :ensure t
-  :hook (prog-mode . hes-mode))
-
 (provide 'base)

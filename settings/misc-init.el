@@ -28,4 +28,8 @@
   (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000"))
   (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393")))
 
+(use-package highlight-escape-sequences
+  :ensure t
+  :hook (prog-mode . hes-mode))
+
 (provide 'misc-init)
