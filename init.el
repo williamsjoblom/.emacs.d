@@ -67,11 +67,16 @@
 (require 'python-init)
 (require 'glsl-init)
 (require 'pike-init)
+(require 'eshell-init)
 
 (require 'kattis)
 
 ;; Load API keys from secret.el if present on the system.
 (require 'secret nil 'noerror)
+
+(setq pike-format-executable
+      "/home/williams/workbench/work/tools/format/main.pike")
+(require 'pike-format nil 'noerror)
 
 (require 'key-bindings)
 
