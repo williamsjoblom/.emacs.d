@@ -1,6 +1,10 @@
+(defun my/eshell-pwd ()
+  (replace-regexp-in-string (substitute-in-file-name "^$HOME") "~" (eshell/pwd)))
+
+
 (defun my/eshell-prompt-function ()
   (concat
-   (propertize (eshell/pwd) 'face `(:foreground "SlateGray4"))
+   (propertize (my/eshell-pwd) 'face `(:foreground "SlateGray4"))
 
    (propertize
     (concat " (" (magit-get-current-branch) ")")
