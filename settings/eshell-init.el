@@ -6,9 +6,11 @@
   (concat
    (propertize (my/eshell-pwd) 'face `(:foreground "SlateGray4"))
 
-   (propertize
-    (concat " (" (magit-get-current-branch) ")")
-    'face `(:foreground "LightSteelBlue3"))
+   (let ((branch (magit-get-current-branch)))
+     (when (> (length branch) 0)
+         (propertize
+        (concat " (" branch ")")
+        'face `(:foreground "LightSteelBlue3"))))
 
    (propertize " $ " 'face `(:foreground "SlateGray3"))))
 
