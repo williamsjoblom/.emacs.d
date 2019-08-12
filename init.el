@@ -75,7 +75,7 @@
 (require 'secret nil 'noerror)
 
 (setq pike-format-executable
-      "/home/williams/workbench/work/tools/format/main.pike")
+      "/home/williams/workbench/work/tools/format/pike-format.pike")
 (require 'pike-format nil 'noerror)
 
 (require 'key-bindings)
