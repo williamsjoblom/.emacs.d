@@ -4,15 +4,17 @@
 
 (defun my/eshell-prompt-function ()
   (concat
-   (propertize (my/eshell-pwd) 'face `(:foreground "SlateGray4"))
+   (propertize (my/eshell-pwd)
+               'face `(:foreground "SlateGray4"))
 
    (let ((branch (magit-get-current-branch)))
      (when (> (length branch) 0)
          (propertize
-        (concat " (" branch ")")
-        'face `(:foreground "LightSteelBlue3"))))
+          (concat " (" branch ")")
+          'face `(:foreground "LightSteelBlue3"))))
 
-   (propertize " $ " 'face `(:foreground "SlateGray3"))))
+   (propertize " ➜" 'face `(:foreground "DarkGreen"))
+   " "))
 
 ;; Disable welcome message.
 (setq eshell-banner-message "")
