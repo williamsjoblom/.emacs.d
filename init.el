@@ -8,8 +8,8 @@
    3 nil
    (lambda (default-gc-cons-threshold)
      (setq gc-cons-threshold default-gc-cons-threshold)
-     (message "gc-cons-threshold restored to %S"
-              gc-cons-threshold))
+     (message "%S garbage collections during startup"
+              gcs-done))
    default-gc-cons-threshold))
 
 ;;; Set ~/workbench/ as default startup directory.
