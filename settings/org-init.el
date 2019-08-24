@@ -22,4 +22,15 @@
 
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
+(defun my/epresent-start-presentation-hook ()
+  (linum-mode -1)
+  (visual-line-mode))
+
+(use-package epresent
+  :ensure t
+  :config
+  (add-hook 'epresent-start-presentation-hook
+            'my/epresent-start-presentation-hook)
+  (setq epresent-mode-line nil))
+
 (provide 'org-init)
