@@ -1,3 +1,17 @@
+;; Bump up the gc-cons-threshold to 256MB during the first 3 seconds
+;; after startup. The value is bumped to shave of .5 seconds at
+;; startup and then restored to avoid noticable GC pauses during
+;; editing.
+(let ((default-gc-cons-threshold gc-cons-threshold))
+  (setq gc-cons-threshold (* 256 1024 1024))
+  (run-with-idle-timer
+   3 nil
+   (lambda (default-gc-cons-threshold)
+     (setq gc-cons-threshold default-gc-cons-threshold)
+     (message "gc-cons-threshold restored to %S"
+              gc-cons-threshold))
+   default-gc-cons-threshold))
+
 ;;; Set ~/workbench/ as default startup directory.
 (setq default-directory "~/workbench/")
 
