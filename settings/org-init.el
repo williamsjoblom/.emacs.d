@@ -2,12 +2,16 @@
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
 
+(use-package org-bullets
+  :ensure t)
+
 ;; Prettify symbols.
 (setq org-pretty-entities t)
 
 (defun my/org-mode-hook ()
   (add-to-list 'org-emphasis-alist
-               '("_" (:foreground "red"))))
+               '("_" (:foreground "red")))
+  (org-bullets-mode 1))
 
 (setq org-todo-keywords
       '((sequence "TODO" "|" "VERIFY" "DONE")))
@@ -32,5 +36,7 @@
   (add-hook 'epresent-start-presentation-hook
             'my/epresent-start-presentation-hook)
   (setq epresent-mode-line nil))
+
+
 
 (provide 'org-init)
