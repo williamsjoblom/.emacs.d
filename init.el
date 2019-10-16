@@ -12,6 +12,9 @@
               gcs-done))
    default-gc-cons-threshold))
 
+;;; Start emacs server.
+(server-start)
+
 ;;; Set ~/workbench/ as default startup directory.
 (setq default-directory "~/workbench/")
 
