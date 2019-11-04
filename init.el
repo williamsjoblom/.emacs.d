@@ -39,6 +39,13 @@
 (add-to-list 'default-frame-alist
              '(font . "Input Mono-10"))
 
+;; Add snippet paths
+(setq my/snippet-dir
+      (expand-file-name "snippets" user-emacs-directory))
+
+(setq yas-snippet-dirs
+      '(my/snippet-dir))
+
 ;;; Load configuration without dependencies.
 (require 'base)
 
