@@ -82,7 +82,7 @@
 (require 'misc-init)
 (require 'csharp-init)
 (require 'cmake-init)
-(require 'kotlin-init)
+;; (require 'kotlin-init)
 (require 'python-init)
 (require 'glsl-init)
 (require 'pike-init)
