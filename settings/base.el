@@ -28,4 +28,7 @@
 ;; Kill trailing whitespace on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Save system clipboard to kill ring before kill.
+(setq save-interprogram-paste-before-kill t)
+
 (provide 'base)
