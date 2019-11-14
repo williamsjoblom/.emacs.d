@@ -91,4 +91,11 @@ current buffer's, reload dir-locals."
     (insert " " stars "/")
     (end-of-line 0)))
 
+(defun eval-and-kill-last-sexp ()
+  "Eval and kill sexp before point; print value to buffer"
+  (interactive)
+  (let ((result (eval-last-sexp nil)))
+    (backward-kill-sexp)
+    (insert (prin1-to-string result))))
+
 (provide 'general-funs)

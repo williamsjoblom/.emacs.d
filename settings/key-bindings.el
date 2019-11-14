@@ -19,6 +19,8 @@
                                (message "Buffer reverted from file")
                                (revert-buffer t t)))
 
+(global-set-key (kbd "C-x M-e") 'eval-and-kill-last-sexp)
+
 ;; Poker3 bindings
 (global-set-key (kbd "H-i") 'previous-line)
 (global-set-key (kbd "H-k") 'next-line)
