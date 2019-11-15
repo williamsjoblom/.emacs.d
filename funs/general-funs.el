@@ -101,5 +101,15 @@ current buffer's, reload dir-locals."
                (current-buffer))
       (error (undo)))))
 
+(defun copy-to-markdown-snippet ()
+  (interactive)
+  (when (region-active-p)
+    (let ((region (buffer-substring-no-properties
+                   (region-beginning)
+                   (region-end))))
+      (if (= (count-lines (region-beginning) (region-end)) 1)
+          (kill-new (concat "`" region "`"))
+        (kill-new (concat "```\n" region "```\n"))))
+    (pop-mark)))
 
 (provide 'general-funs)

@@ -21,6 +21,8 @@
 
 (global-set-key (kbd "C-x M-e") 'eval-and-kill-last-sexp)
 
+(global-set-key (kbd "C-S-w") 'copy-to-markdown-snippet)
+
 ;; Poker3 bindings
 (global-set-key (kbd "H-i") 'previous-line)
 (global-set-key (kbd "H-k") 'next-line)
