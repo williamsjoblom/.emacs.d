@@ -102,6 +102,7 @@ current buffer's, reload dir-locals."
       (error (undo)))))
 
 (defun copy-to-markdown-snippet ()
+  "Copy region to markdown snippet"
   (interactive)
   (when (region-active-p)
     (let ((region (buffer-substring-no-properties
