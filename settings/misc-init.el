@@ -30,4 +30,10 @@
   :ensure t
   :hook (prog-mode . hes-mode))
 
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region)
+  )
+
 (provide 'misc-init)
