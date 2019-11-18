@@ -1,7 +1,6 @@
 (defun my/eshell-pwd ()
   (replace-regexp-in-string (substitute-in-file-name "^$HOME") "~" (eshell/pwd)))
 
-
 (defun my/eshell-prompt-function ()
   (concat
    (propertize (my/eshell-pwd)
@@ -19,7 +18,8 @@
 ;; Disable welcome message.
 (setq eshell-banner-message "")
 
-(setq eshell-prompt-function 'my/eshell-prompt-function)
+(setq eshell-prompt-function 'my/eshell-prompt-function
+      eshell-prompt-regexp ".*➜ ")
 (setq eshell-highlight-prompt nil)
 
 (provide 'eshell-init)
