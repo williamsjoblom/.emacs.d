@@ -1,17 +1,35 @@
-;; Syntax highlighting for code blocks.
-(setq org-src-fontify-natively t)
-(setq org-src-tab-acts-natively t)
-
 (use-package org-bullets
   :ensure t)
 
+(use-package epresent
+  :ensure t
+  :config
+  (defun my/epresent-start-presentation-hook ()
+    (linum-mode -1)
+    (visual-line-mode))
+  (add-hook 'epresent-start-presentation-hook
+            'my/epresent-start-presentation-hook)
+  (setq epresent-mode-line nil))
+
 ;; Prettify symbols.
-(setq org-pretty-entities t)
+(setq org-pretty-entities t
+      org-hide-emphasis-markers t
+      org-fontify-whole-heading-line t
+      org-src-tab-acts-natively t
+      org-src-fontify-natively t
+      org-fontify-quote-and-verse-blocks t
+      org-ellipsis "  ")
 
 (defun my/org-mode-hook ()
-  (add-to-list 'org-emphasis-alist
-               '("_" (:foreground "red")))
-  (org-bullets-mode 1))
+  (interactive)
+  (org-bullets-mode 1)
+
+  (setq-local line-spacing 0.1)
+  (setq-local left-margin-width 2)
+  (setq-local right-margin-width 2)
+  (linum-mode -1))
+
+(add-hook 'org-mode-hook 'my/org-mode-hook)
 
 (setq org-todo-keywords
       '((sequence "TODO" "|" "VERIFY" "DONE")))
@@ -24,19 +42,55 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
-(add-hook 'org-mode-hook 'my/org-mode-hook)
 
-(defun my/epresent-start-presentation-hook ()
-  (linum-mode -1)
-  (visual-line-mode))
+;; Pretty list bullets.
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0
+                            (prog1 ()
+                              (compose-region (match-beginning 1)
+                                              (match-end 1)
+                                              "•"))))))
 
-(use-package epresent
-  :ensure t
-  :config
-  (add-hook 'epresent-start-presentation-hook
-            'my/epresent-start-presentation-hook)
-  (setq epresent-mode-line nil))
+;; Faces
+(set-face-attribute 'org-level-1 nil
+                    :weight 'semi-light
+                    :slant 'normal
+                    :height 1.4)
 
+(set-face-attribute 'org-level-2 nil
+                    :weight 'semi-light
+                    :slant 'normal
+                    :height 1.25)
 
+(set-face-attribute 'org-level-3 nil
+                    :weight 'semi-light
+                    :slant 'normal
+                    :height 1.2)
+
+(set-face-attribute 'org-level-4 nil
+                    :weight 'semi-light
+                    :slant 'normal
+                    :height 1.15)
+
+(set-face-attribute 'org-level-5 nil
+                    :weight 'semi-light
+                    :slant 'normal
+                    :height 1.1)
+
+(set-face-attribute 'org-quote nil
+                    :slant 'italic)
+
+(set-face-attribute 'org-done nil
+                    :strike-through t)
+
+(set-face-attribute 'org-block-begin-line nil
+                    :height 0.85)
+
+(set-face-attribute 'org-block-end-line nil
+                    :height 0.85)
+
+(set-face-attribute 'org-done nil
+                    :strike-through t)
 
 (provide 'org-init)
