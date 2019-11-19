@@ -1,3 +1,33 @@
+(defun my/new-eshell-other-window ()
+  (interactive)
+  (unless (other-window 1)
+    (split-window-sensibly)
+    (other-window 1))
+  (eshell t))
+
+(defun my/project-eshell-buffer ()
+  (first-matching-buffer
+   (format "\\*eshell\\*<%s>" (projectile-project-name))))
+
+(defun my/eshell ()
+  (interactive)
+  (let* ((project-root ))
+    (if (projectile-project-name)
+        (let ((buffer (my/project-eshell-buffer)))
+          (if buffer
+              (switch-to-buffer-other-window buffer)
+            (my/new-eshell-other-window)))
+      (my/new-eshell-other-window))))
+
+(global-set-key (kbd "C-<return>") 'my/eshell)
+
+(defun my/eshell-hook ()
+  (local-set-key (kbd "C-S-<return>") 'my/new-eshell-other-window)
+  (when (projectile-project-name)
+    (rename-buffer (format "*eshell*<%s>" (projectile-project-name)) t)))
+
+(add-hook 'eshell-mode-hook 'my/eshell-hook)
+
 (defun my/eshell-pwd ()
   (replace-regexp-in-string (substitute-in-file-name "^$HOME") "~" (eshell/pwd)))
 
