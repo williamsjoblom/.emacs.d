@@ -113,4 +113,10 @@ current buffer's, reload dir-locals."
         (kill-new (concat "```\n" region "```\n"))))
     (pop-mark)))
 
+(defun first-matching-buffer (regexp)
+  "First buffer matching the given regexp"
+  (require 'seq)
+  (car (seq-filter (apply-partially #'string-match-p regexp)
+                   (mapcar 'buffer-name (buffer-list)))))
+
 (provide 'general-funs)
