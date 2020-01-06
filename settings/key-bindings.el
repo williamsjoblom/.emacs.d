@@ -44,6 +44,8 @@
 
 (global-set-key (kbd "C-]") 'comment-or-uncomment-region)
 
+(global-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
+
 ;; Bookmark bindings
 (global-set-key (kbd "<f1>") (lambda () (interactive) (bookmark-jump "f1")))
 (global-set-key (kbd "<f2>") (lambda () (interactive) (bookmark-jump "f2")))
