@@ -84,6 +84,7 @@
 (require 'dired-init)
 (require 'multiple-cursors-init)
 (require 'yas-init)
+(require 'pdf-init)
 
 (require 'kattis)
 
