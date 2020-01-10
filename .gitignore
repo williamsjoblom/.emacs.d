@@ -1,11 +1,17 @@
 # -*- mode: gitignore; -*-
 *~
 \#*\#
+.\#*
 network-security.data
 *.eld
 session.*
 .lsp-session*
-elpa/
+/elpa/
+/eshell/
+recentf
+tramp
+.mc-lists.el
+/transient/
 
 # Ignore API keys stored in secret.el
 settings/secret.el
