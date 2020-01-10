@@ -40,4 +40,10 @@
   (global-set-key (kbd "C-=") 'er/expand-region)
   )
 
+(defun my/doc-view-mode-hook ()
+  ;; Disable line numbering in doc-view-mode.
+  (linum-mode -1))
+
+(add-hook 'doc-view-mode-hook 'my/doc-view-mode-hook)
+
 (provide 'misc-init)
