@@ -9,4 +9,12 @@
 
   (add-hook 'pdf-view-mode-hook 'my/pdf-view-mode-hook))
 
+(use-package pdf-view
+  :ensure nil
+  :after pdf-tools
+  :bind (:map pdf-view-mode-map
+              ;; swiper does not work in pdf-view-mode, use original
+              ;; isearch-forward instead.
+              ("C-s" . isearch-forward)))
+
 (provide 'pdf-init)
