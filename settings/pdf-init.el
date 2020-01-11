@@ -1,6 +1,9 @@
 (use-package pdf-tools
   :ensure t
   :config
+  ;; Clear the incompatible modes list to remove nag about
+  ;; global-linum-mode. linum-mode is being disabled for pdf-view-mode
+  ;; a few lines down.
   (setq pdf-view-incompatible-modes nil)
   (pdf-loader-install)
   (defun my/pdf-view-mode-hook ()
