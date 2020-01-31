@@ -6,6 +6,17 @@
     (replace-buffer-in-windows "*compilation*"))
   (cons msg code))
 
+;; Open compilation buffers on the right-hand side.
+(add-to-list 'display-buffer-alist
+             '("\\*Compilation\\*" display-buffer-in-side-window
+               (side . right)
+               (slot . 0)
+               (window-height . fit-window-to-buffer)
+               (preserve-size . (nil . t))
+               (no-other-window . t)
+               (no-delete-other-windows . t)))
+
+
 (setq compilation-exit-message-function 'my/compilation-exit-autoclose)
 
 (global-set-key (kbd "M-p") 'previous-error)
