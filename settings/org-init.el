@@ -46,6 +46,9 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
 
 ;; Pretty list bullets.
 (font-lock-add-keywords 'org-mode
@@ -65,22 +68,22 @@
 (set-face-attribute 'org-level-2 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.25)
+                    :height 1.1)
 
 (set-face-attribute 'org-level-3 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.2)
+                    :height 1.05)
 
 (set-face-attribute 'org-level-4 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.15)
+                    :height 1.0)
 
 (set-face-attribute 'org-level-5 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.1)
+                    :height 1.0)
 
 (set-face-attribute 'org-quote nil
                     :slant 'italic)
