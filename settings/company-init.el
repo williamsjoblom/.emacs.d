@@ -2,8 +2,8 @@
   :ensure t
   :bind (("C-;" . company-complete-common))
   :init
-  (setq company-idle-delay            0.5
-	company-minimum-prefix-length 0
+  (setq company-idle-delay            0.0
+	company-minimum-prefix-length 1
 	company-show-numbers          nil
 	company-tooltip-limit         10
 	company-dabbrev-downcase      nil)
