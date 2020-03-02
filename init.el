@@ -2,15 +2,22 @@
 ;; after startup. The value is bumped to shave of .5 seconds at
 ;; startup and then restored to avoid noticable GC pauses during
 ;; editing.
-(let ((default-gc-cons-threshold gc-cons-threshold))
-  (setq gc-cons-threshold (* 256 1024 1024))
-  (run-with-idle-timer
-   3 nil
-   (lambda (default-gc-cons-threshold)
-     (setq gc-cons-threshold default-gc-cons-threshold)
-     (message "%S garbage collections during startup"
-              gcs-done))
-   default-gc-cons-threshold))
+
+;; (let ((default-gc-cons-threshold gc-cons-threshold))
+;;   (setq gc-cons-threshold (* 256 1024 1024))
+;;   (run-with-idle-timer
+;;    3 nil
+;;    (lambda (default-gc-cons-threshold)
+;;      (setq gc-cons-threshold default-gc-cons-threshold)
+;;      (message "%S garbage collections during startup"
+;;               gcs-done))
+;;    default-gc-cons-threshold))
+
+;; NOTE: Scrapped the above reset to `default-gc-cons-threshold` since
+;; lsp-mode becomes painfully slow with frequent gc pauses. We now
+;; leave the threshold at 128mb.
+(setq gc-cons-threshold (* 128 1024 1024))
+
 
 ;;; Start emacs server.
 (server-start)
