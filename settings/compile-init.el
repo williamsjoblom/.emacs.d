@@ -9,7 +9,7 @@
 ;; Open compilation buffers on the right-hand side.
 (add-to-list 'display-buffer-alist
              '("\\*Compilation\\*" display-buffer-in-side-window
-               (side . right)
+               (side . bottom)
                (slot . 0)
                (window-height . fit-window-to-buffer)
                (preserve-size . (nil . t))
