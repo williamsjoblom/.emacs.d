@@ -18,6 +18,7 @@
 
 
 (setq compilation-exit-message-function 'my/compilation-exit-autoclose)
+(setq compilation-scroll-output 'first-error)
 
 (global-set-key (kbd "M-p") 'previous-error)
 (global-set-key (kbd "M-n") 'next-error)
