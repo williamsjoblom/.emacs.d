@@ -22,13 +22,23 @@
 ;; Enable undo/redo for window modifications.
 (winner-mode)
 
-;; Disable scroll acceleration.
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-
 ;; Kill trailing whitespace on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Save system clipboard to kill ring before kill.
 (setq save-interprogram-paste-before-kill t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Scrolling
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq scroll-margin 4)
+
+;; Disable scroll acceleration.
+(setq mouse-wheel-progressive-speed nil)
+
+;; Always redraw while scrolling.
+(setq fast-but-imprecise-scrolling nil)
+(setq jit-lock-defer-time 0)
 
 (provide 'base)
