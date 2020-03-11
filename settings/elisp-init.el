@@ -5,7 +5,7 @@
   (open-line 1)
   (indent-according-to-mode)
   (let* ((indent (current-column))
-	 (dashes (make-string (- 80 indent) ?-)))
+	 (dashes (make-string (- 80 indent) ?\;)))
     (insert ";;" dashes "\n")
     (indent-to indent)
     (insert ";; \n")
