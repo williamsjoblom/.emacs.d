@@ -44,7 +44,7 @@
 (add-to-list 'load-path load-dir)
 
 (add-to-list 'default-frame-alist
-             '(font . "Input Mono-10"))
+             '(font . "Px437 ATI 9x16-11"))
 
 
 ;;; Load configuration without dependencies.
