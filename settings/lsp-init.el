@@ -6,16 +6,23 @@
   :ensure t
   :after lsp-mode
   :config
-  (lsp-ui-sideline-enable nil))
+  (lsp-ui-sideline-enable nil)
+  (setq lsp-prefer-flymake nil))
 
-(use-package cquery
+;; (use-package cquery
+;;   :ensure t
+;;   :after lsp-ui company flycheck
+;;   :init
+;;   (setq cquery-executable "/usr/bin/cquery")
+;;   (setq company-transformers         nil
+;; 	company-lsp-async            t
+;; 	company-lsp-cache-candidates nil))
+
+(use-package ccls
   :ensure t
   :after lsp-ui company flycheck
   :init
-  (setq cquery-executable "/usr/bin/cquery")
-  (setq company-transformers         nil
-	company-lsp-async            t
-	company-lsp-cache-candidates nil))
+  (setq ccls-executable "/usr/bin/ccls"))
 
 (use-package dap-mode
   :ensure t
