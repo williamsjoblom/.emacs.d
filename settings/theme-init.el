@@ -34,6 +34,9 @@
                     :weight 'medium
                     :width 'normal)
 
+;; Disable ligatures when next a ligature to allow editing.
+(setq prettify-symbols-unprettify-at-point 'right-edge)
+
 (defun setup-iosevka-ligatures ()
   (setq prettify-symbols-alist
         (append prettify-symbols-alist
