@@ -1,9 +1,12 @@
 ;; If compilation was successful: bury compilation buffer and restore
 ;; previous buffer in window.
 (defun my/compilation-exit-autoclose (status code msg)
-  (when (and (eq status 'exit) (zerop code))
-    (bury-buffer "*compilation*")
-    (replace-buffer-in-windows "*compilation*"))
+  (if (and (eq status 'exit) (zerop code))
+      (progn
+        (bury-buffer "*compilation*")
+        (replace-buffer-in-windows "*compilation*"))
+    (with-selected-window (get-buffer-window "*compilation*")
+      (window-resize nil (* 4 (window-total-height)))))
   (cons msg code))
 
 ;; Open compilation buffers on the right-hand side.

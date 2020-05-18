@@ -18,6 +18,8 @@
 
 (add-hook 'dired-mode-hook 'my/dired-mode-hook)
 
+(setq dired-dwim-target t)
+
 (use-package all-the-icons-dired
   :ensure t
   :after all-the-icons)
