@@ -32,7 +32,7 @@
 ;; Scrolling
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq scroll-margin 4)
+(setq scroll-margin 0)
 
 ;; Disable scroll acceleration.
 (setq mouse-wheel-progressive-speed nil)
