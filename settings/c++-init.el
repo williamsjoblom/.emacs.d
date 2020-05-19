@@ -11,8 +11,15 @@
   (interactive)
   (ff-find-other-file t))
 
+(defun my/maybe-add-pragma-once ()
+  "Add '#pragma once' to an empty file if its extension is '.hh'"
+  (when (and (string= (file-name-extension (buffer-file-name)) "hh")
+             (= (buffer-size) 0))
+    (insert "#pragma once\n")
+    (set-buffer-modified-p nil)))
+
 (defun my/c++-mode-hook ()
-  (interactive)
+  (my/maybe-add-pragma-once)
 
   (setq c-basic-offset  4
               c-default-style "linux")
