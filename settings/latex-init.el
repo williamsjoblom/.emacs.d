@@ -1,6 +1,5 @@
-(defun my/latex-mode-hook ()
-  (hl-todo-mode))
-
-(add-hook 'latex-mode-hook 'my/latex-mode-hook)
+(defun auctex
+    :ensure t
+    :hook (hl-todo-mode . LaTeX-mode))
 
 (provide 'latex-init)
