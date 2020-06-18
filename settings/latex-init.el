@@ -1,5 +1,5 @@
 (use-package auctex
     :ensure t
-    :hook (hl-todo-mode . LaTeX-mode))
+    :hook (LaTeX-mode . hl-todo-mode))
 
 (provide 'latex-init)
