@@ -88,6 +88,7 @@
 (require 'multiple-cursors-init)
 (require 'yas-init)
 (require 'pdf-init)
+(require 'latex-init)
 
 (require 'kattis)
 
