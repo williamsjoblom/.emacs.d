@@ -89,6 +89,7 @@
 (require 'yas-init)
 (require 'pdf-init)
 (require 'latex-init)
+(require 'java-init)
 
 (require 'kattis)
 
