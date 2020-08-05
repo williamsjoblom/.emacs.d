@@ -13,10 +13,16 @@
     (insert ";;" dashes)
     (end-of-line 0)))
 
+(defun my/elisp-remove-elc ()
+  "Remove elisp file corresponding to the current buffer."
+  (interactive)
+  (if (file-exists-p (concat buffer-file-name "c"))
+      (delete-file (concat buffer-file-name "c"))))
 
 (defun my/elisp-hook ()
   (company-mode)
-  (local-set-key (kbd "C-M-j") 'elisp-block-comment))
+  (local-set-key (kbd "C-M-j") 'elisp-block-comment)
+  (add-hook 'after-save-hook 'my/elisp-remove-elc))
 
 (add-hook 'emacs-lisp-mode-hook 'my/elisp-hook)
 
