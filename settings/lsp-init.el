@@ -1,6 +1,13 @@
 (use-package lsp-mode
   :after yasnippet
-  :ensure t)
+  :ensure t
+  :bind (:map lsp-mode-map
+              ("M-i" . xref-find-definitions)
+              ("M-I" . xref-find-definitions-other-window)
+              ("C-M-i" . xref-pop-marker-stack)
+              ("C-c r" . lsp-rename))
+  :config
+  (setq lsp-enable-file-watchers nil))
 
 (use-package lsp-ui
   :ensure t

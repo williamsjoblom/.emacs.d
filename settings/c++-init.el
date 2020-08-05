@@ -24,14 +24,11 @@
   (setq c-basic-offset  4
               c-default-style "linux")
 
-  (local-set-key (kbd "M-i") 'xref-find-definitions)
-  (local-set-key (kbd "C-M-i") 'xref-pop-marker-stack)
-  (local-set-key (kbd "M-o") 'ff-find-other-file)
-  (local-set-key (kbd "M-O") 'my/ff-find-other-file-other-window)
-  (local-set-key (kbd "C-c r") 'lsp-rename)
-  (local-set-key (kbd "C-c m") 'cmake-ide-compile)
-  (local-set-key (kbd "C-c i") 'indent-buffer)
-  (local-set-key (kbd "C-c k") 'kattis-submit-and-open-browser)
+  ;; (local-set-key (kbd "M-o") 'ff-find-other-file)
+  ;; (local-set-key (kbd "M-O") 'my/ff-find-other-file-other-window)
+  ;; (local-set-key (kbd "C-c m") 'cmake-ide-compile)
+  ;; (local-set-key (kbd "C-c i") 'indent-buffer)
+  ;; (local-set-key (kbd "C-c k") 'kattis-submit-and-open-browser)
   (column-number-mode)
 
   ;; Bind C-m to 'compile', <return> needs to be bound to
