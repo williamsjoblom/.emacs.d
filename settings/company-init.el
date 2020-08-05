@@ -14,6 +14,6 @@
   :ensure t
   :after (company lsp-mode)
   :config
-  (add-to-list 'company-backends 'company-lsp))
+  (add-to-list 'company-backends 'company-capf))
 
 (provide 'company-init)
