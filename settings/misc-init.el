@@ -15,8 +15,8 @@
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
   (setq dashboard-center-content t)
-  (setq dashboard-items '((recents . 10)
-                          (projects . 3)
+  (setq dashboard-items '((recents . 20)
+                          (projects . 5)
                           (bookmarks . 5)
                           (agenda . 5))))
 
