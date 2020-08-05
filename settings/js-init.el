@@ -1,20 +1,3 @@
-(use-package company-tern
-    :ensure t
-    :config
-    (add-to-list 'company-backends 'company-tern))
-
-(use-package tern
-  :ensure t
-  :commands tern-mode
-  :after company-tern
-  :hook (tern-mode . company-mode)
-  :config
-  (define-key tern-mode-keymap (kbd "C-M-.") nil)
-
-  (define-key tern-mode-keymap (kbd "M-i") 'tern-find-definition)
-  (define-key tern-mode-keymap (kbd "C-M-i") 'tern-pop-find-definition))
-
-
 
 (use-package js2-mode
   :ensure t
