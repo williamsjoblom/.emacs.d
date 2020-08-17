@@ -119,4 +119,14 @@ current buffer's, reload dir-locals."
   (car (seq-filter (apply-partially #'string-match-p regexp)
                    (mapcar 'buffer-name (buffer-list)))))
 
+(defun save-project-relative-line ()
+    "Save the current file path (relative to projectile root)
+along with the current line number"
+  (interactive)
+  (kill-new (format "%s:%d"
+                    (file-relative-name
+                     (buffer-file-name (current-buffer))
+                     (projectile-project-root))
+                    (line-number-at-pos))))
+
 (provide 'general-funs)

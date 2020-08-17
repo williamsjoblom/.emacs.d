@@ -46,6 +46,8 @@
 
 (global-set-key (kbd "C-c C-x C-l") 'org-toggle-latex-fragment)
 
+(global-set-key (kbd "C-M-W") 'save-project-relative-line)
+
 ;; Bookmark bindings
 (global-set-key (kbd "<f1>") (lambda () (interactive) (bookmark-jump "f1")))
 (global-set-key (kbd "<f2>") (lambda () (interactive) (bookmark-jump "f2")))
