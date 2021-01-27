@@ -38,7 +38,7 @@
 (setq scroll-margin 0)
 
 ;; Disable scroll acceleration.
-(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-progressive-speed t)
 
 ;; Always redraw while scrolling.
 (setq fast-but-imprecise-scrolling nil)
