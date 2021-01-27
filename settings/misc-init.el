@@ -42,4 +42,7 @@
 (use-package restclient
   :ensure t)
 
+(use-package csv-mode
+  :ensure t
+  :mode "\\.csv\\'")
 (provide 'misc-init)
