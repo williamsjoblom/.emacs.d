@@ -1,3 +1,7 @@
-(use-package rust-mode
+(use-package rustic
   :ensure t
-  :mode "\\.rs\\'")
+  :hook (rustic-mode . lsp-mode)
+  :mode ("\\.rs\\'" . rustic-mode)
+  :init
+  (setq rustic-lsp-server 'rls)
+  (setq-default rustic-format-trigger 'on-save))
