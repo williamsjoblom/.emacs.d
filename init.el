@@ -81,9 +81,7 @@
 (require 'org-init)
 (require 'js-init)
 (require 'misc-init)
-(require 'csharp-init)
 (require 'cmake-init)
-;; (require 'kotlin-init)
 (require 'python-init)
 (require 'glsl-init)
 (require 'pike-init)
@@ -94,6 +92,7 @@
 (require 'pdf-init)
 (require 'latex-init)
 (require 'java-init)
+(require 'avy-init)
 
 (require 'kattis)
 
