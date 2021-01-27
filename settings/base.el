@@ -7,6 +7,9 @@
 ;; Line numbering
 (global-linum-mode t)
 
+;; Disable ear damage
+(setq visible-bell t)
+
 ;; Autofollow symlinks
 (setq vc-follow-symlinks t)
 
