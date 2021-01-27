@@ -45,4 +45,31 @@
 (use-package csv-mode
   :ensure t
   :mode "\\.csv\\'")
+
+(defun my/add-systemd-service-boilerplate ()
+  "Add systemd service boilerplate to an empty file if its
+extension is '.service"
+  (interactive)
+  (yas-expand-snippet "[Unit]
+Description=$1
+After=multi-user.target
+
+[Service]
+Type=$2
+ExecStart=$3
+${4:User=$5}
+${6:Group=$7}
+
+[Install]
+WantedBy=multi-user.target"))
+
+(use-package autoinsert
+  :ensure t
+  :init
+  (setq auto-insert-query nil)
+  (add-hook 'find-file-hook 'auto-insert)
+  (auto-insert-mode 1)
+  :config
+  (define-auto-insert "\\.service$" [my/add-systemd-service-boilerplate]))
+
 (provide 'misc-init)
