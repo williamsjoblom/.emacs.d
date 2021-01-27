@@ -23,7 +23,7 @@
 
 (global-set-key (kbd "C-S-w") 'copy-to-markdown-snippet)
 
-;; Poker3 bindings
+;; Bind CAPS to hyper -> Pok3r bindings
 (global-set-key (kbd "H-i") 'previous-line)
 (global-set-key (kbd "H-k") 'next-line)
 (global-set-key (kbd "H-l") 'right-char)
