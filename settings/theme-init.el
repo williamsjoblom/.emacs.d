@@ -11,10 +11,20 @@
 ;;     (set-face-attribute 'mode-line          nil :background "#f2e5bc")
 ;;     (set-face-attribute 'mode-line-inactive nil :background "#ebdbb2")))
 
-(use-package dakrone-light-theme
+;; (use-package dakrone-light-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'dakrone-light t))
+
+(use-package nord-theme
   :ensure t
   :config
-  (load-theme 'dakrone-light t))
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (load-theme 'nord t)))
+    (load-theme 'nord t)))
 
 (use-package moody
   :ensure t
@@ -31,7 +41,9 @@
 (set-face-attribute 'default nil
                     :family "Iosevka"
                     :height 110
-                    :weight 'medium
+                    :weight 'bold
                     :width 'normal)
+
+(setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
 
 (provide 'theme-init)
