@@ -10,10 +10,10 @@
   :config
   (setq company-backends (delete 'company-semantic company-backends)))
 
-(use-package company-lsp
-  :ensure t
-  :after (company lsp-mode)
-  :config
-  (add-to-list 'company-backends 'company-capf))
+;; (use-package company-lsp
+;;   :ensure t
+;;   :after (company lsp-mode)
+;;   :config
+;;   (add-to-list 'company-backends 'company-lsp))
 
 (provide 'company-init)
