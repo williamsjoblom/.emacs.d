@@ -18,6 +18,10 @@
 ;; leave the threshold at 128mb.
 (setq gc-cons-threshold (* 128 1024 1024))
 
+;; Increase for lsp-mode:
+(setq read-process-output-max (* 1024 1024))
+
+(setq create-lockfiles nil)
 
 ;;; Start emacs server.
 (server-start)
