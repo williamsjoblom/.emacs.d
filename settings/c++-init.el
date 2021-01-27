@@ -18,17 +18,30 @@
     (insert "#pragma once\n")
     (set-buffer-modified-p nil)))
 
+(defun my/c++-comment-setup ()
+  "Setup magic multiline C++ comments. M-j for newline with
+multiline comment prefix."
+  (interactive)
+  (setq-local comment-start "/**"
+              comment-end   " */"
+              comment-multi-line t
+              comment-padding nil
+              comment-style 'extra-line
+              comment-continue " * "
+              comment-empty-lines t))
+
 (defun my/c++-mode-hook ()
   (my/maybe-add-pragma-once)
+  (my/c++-comment-setup)
 
   (setq c-basic-offset  4
-              c-default-style "linux")
+        c-default-style "linux")
 
-  ;; (local-set-key (kbd "M-o") 'ff-find-other-file)
-  ;; (local-set-key (kbd "M-O") 'my/ff-find-other-file-other-window)
-  ;; (local-set-key (kbd "C-c m") 'cmake-ide-compile)
-  ;; (local-set-key (kbd "C-c i") 'indent-buffer)
-  ;; (local-set-key (kbd "C-c k") 'kattis-submit-and-open-browser)
+  (local-set-key (kbd "M-o") 'ff-find-other-file)
+  (local-set-key (kbd "M-O") 'my/ff-find-other-file-other-window)
+  (local-set-key (kbd "C-c m") 'cmake-ide-compile)
+  (local-set-key (kbd "C-c i") 'indent-buffer)
+  (local-set-key (kbd "C-c k") 'kattis-submit-and-open-browser)
   (column-number-mode)
 
   ;; Bind C-m to 'compile', <return> needs to be bound to
@@ -40,7 +53,7 @@
   (local-set-key (kbd "C-M-k") 'c-doc-comment)
   (local-set-key (kbd "C-M-j") 'c-block-comment)
 
-  (flycheck-mode)
+  ;; (flycheck-mode)
   (company-mode)
   (add-to-list 'company-backends 'company-lsp)
   (lsp)
