@@ -1,17 +1,30 @@
 # -*- mode: gitignore; -*-
-*~
-\#*\#
-.\#*
-network-security.data
+*.elc
 *.eld
-session.*
+*~
+.\#*
+.cache/
+.dap-breakpoints
+.extension/
 .lsp-session*
+.mc-lists.el
+.org-id-locations
 /elpa/
 /eshell/
-recentf
-tramp
-.mc-lists.el
 /transient/
+\#*\#
+anaconda-mode/
+eln-cache/
+melpa
+network-security.data
+projectile.cache
+projects
+recentf
+session.*
+tramp
+tutorial/
+var/
+workspace/
 
 # Ignore API keys stored in secret.el
 settings/secret.el
