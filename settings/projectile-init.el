@@ -1,4 +1,9 @@
-(use-package magit :ensure t)
+(use-package magit
+  :ensure t)
+
+(use-package magit-svn
+  :ensure t
+  :after magit)
 
 (use-package projectile
   :ensure t
