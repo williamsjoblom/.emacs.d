@@ -38,11 +38,25 @@
   :config
   (minions-mode 1))
 
-(set-face-attribute 'default nil
-                    :family "Iosevka"
-                    :height 110
-                    :weight 'bold
-                    :width 'normal)
+(let ((h (system-name)))
+  (cond ((string= h "tesla")   ;; Home
+         (set-face-attribute 'default nil
+                             :family "Iosevka"
+                             :height 110
+                             :weight 'bold
+                             :width 'normal))
+        ((string= h "maxwell") ;; Thinkpad
+          (set-face-attribute 'default nil
+                              :family "Iosevka"
+                              :height 100
+                              :weight 'bold
+                              :width 'normal))
+         ((string= h "wilsj")  ;; Work
+          (set-face-attribute 'default nil
+                              :family "Iosevka"
+                              :height 100
+                              :weight 'bold
+                              :width 'normal))))
 
 (setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
 
