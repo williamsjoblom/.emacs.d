@@ -1,23 +1,6 @@
+(use-package lsp-pyright
+  :ensure t)
 
-(defun my/python-mode-hook ()
-  (interactive)
-  (company-mode))
-
-
-(use-package anaconda-mode
-  :ensure t
-  :hook ((python-mode . anaconda-mode)
-         (python-mode . my/python-mode-hook)))
-
-(use-package company-anaconda
-  :after anaconda-mode
-  :ensure t
-  :config
-  '(add-to-list 'company-backends 'company-anaconda))
-
-(setq python-shell-interpreter "python3")
-
-;; Insert C block comment
 (defun python-block-comment ()
   (interactive)
   (beginning-of-line)
@@ -30,6 +13,27 @@
     (indent-to indent)
     (insert stars)
     (end-of-line 0)))
+
+(defun my/python-mode-hook ()
+  (require 'lsp-pyright)
+  (lsp)
+  (company-mode)
+
+  (local-set-key (kbd "C-M-k") 'python-block-comment))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+;; (use-package anaconda-mode
+;;   :ensure t
+;;   :hook ((python-mode . anaconda-mode)
+;;          (python-mode . my/python-mode-hook)))
+
+;; (use-package company-anaconda
+;;   :after anaconda-mode
+;;   :ensure t
+;;   :config
+;;   '(add-to-list 'company-backends 'company-anaconda))
+
+(setq python-shell-interpreter "python3")
 
 
 (provide 'python-init)
