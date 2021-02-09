@@ -55,7 +55,7 @@
           (set-face-attribute 'default nil
                               :family "Iosevka"
                               :height 100
-                              :weight 'bold
+                              :weight 'demibold
                               :width 'normal))))
 
 (setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
