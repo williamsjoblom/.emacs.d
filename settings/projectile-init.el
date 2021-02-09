@@ -5,6 +5,13 @@
   :ensure t
   :after magit)
 
+(use-package diff-hl
+  :ensure t
+  :hook ((prog-mode . diff-hl-mode)
+         (dired-mode . diff-hl-dired-mode))
+  :config
+  (diff-hl-flydiff-mode))
+
 (use-package projectile
   :ensure t
   :after magit
