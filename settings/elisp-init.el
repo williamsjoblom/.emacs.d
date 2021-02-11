@@ -22,7 +22,7 @@
 (defun my/elisp-hook ()
   (company-mode)
   (local-set-key (kbd "C-M-j") 'elisp-block-comment)
-  (add-hook 'after-save-hook 'my/elisp-remove-elc))
+  (add-hook 'after-save-hook 'my/elisp-remove-elc 0 t))
 
 (add-hook 'emacs-lisp-mode-hook 'my/elisp-hook)
 
