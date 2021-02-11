@@ -18,7 +18,7 @@
   (require 'lsp-pyright)
   (lsp)
   (company-mode)
-
+  (column-number-mode)
   (local-set-key (kbd "C-M-k") 'python-block-comment))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
