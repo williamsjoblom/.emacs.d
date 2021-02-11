@@ -25,8 +25,18 @@
 ;; Enable undo/redo for window modifications.
 (winner-mode)
 
-;; Kill trailing whitespace on save.
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(defun first-trailing-whitespace ()
+  (string-match-p "\\s-$"
+                  (buffer-substring-no-properties
+                   (point-min) (point-max))))
+
+(defun maybe-add-delete-trailing-whitespace-hook ()
+  (unless (first-trailing-whitespace)
+    (add-hook 'before-save-hook 'delete-trailing-whitespace 0 t)))
+
+;; Kill trailing whitespace on save if the buffer does not contain any
+;; trailing whitespace when opened.
+(add-hook 'prog-mode-hook 'maybe-add-delete-trailing-whitespace-hook)
 
 ;; Save system clipboard to kill ring before kill.
 (setq save-interprogram-paste-before-kill t)
