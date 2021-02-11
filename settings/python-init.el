@@ -1,7 +1,27 @@
 (use-package lsp-pyright
   :ensure t)
 
-(defun python-block-comment ()
+(defun my/python-coverage-current-buffer ()
+  "Check coverage for current buffer"
+  (interactive)
+  (shell-command (concat "coverage run --branch " (buffer-file-name))))
+
+(defun my/python-coverage-pop-up-report ()
+  "Show python coverage report in new window"
+  (interactive)
+  (with-temp-buffer-window "*coverage*" 'display-buffer-pop-up-window nil
+    (prin1 (shell-command-to-string "coverage report"))))
+
+(defun my/python-coverage-open-html ()
+  "Check coverage, generate html report, and open it with the
+default browser"
+  (interactive)
+  (my/python-coverage-current-buffer)
+  (let ((dir (make-temp-file "coverage" t)))
+    (shell-command (concat "coverage html -d " dir))
+    (shell-command (concat "xdg-open " (expand-file-name "index.html" dir)))))
+
+(defun my/python-block-comment ()
   (interactive)
   (beginning-of-line)
   (open-line 1)
@@ -18,8 +38,11 @@
   (require 'lsp-pyright)
   (lsp)
   (company-mode)
-
-  (local-set-key (kbd "C-M-k") 'python-block-comment))
+  (column-number-mode)
+  (local-set-key (kbd "C-M-k") 'my/python-block-comment)
+  (local-set-key (kbd "C-c c c") 'my/python-coverage-current-buffer)
+  (local-set-key (kbd "C-c c r") 'my/python-coverage-pop-up-report)
+  (local-set-key (kbd "C-c c h") 'my/python-coverage-open-html))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 ;; (use-package anaconda-mode
