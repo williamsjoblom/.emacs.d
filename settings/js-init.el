@@ -1,5 +1,8 @@
 (use-package tide
-  :ensure t)
+  :ensure t
+  :bind (:map global-map
+	      ("C-M-k" . c-doc-comment)
+	      ("C-M-j" . c-block-comment)))
 
 (defun setup-tide ()
   "Setup tide-mode and friends for current buffer"
