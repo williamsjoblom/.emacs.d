@@ -1,5 +1,10 @@
 (use-package magit
-  :ensure t)
+  :ensure t
+  (when (string= (system-name) "wilsj")
+    (setq git-commit-summary-max-length 50)
+    (setq git-commit-fill-column 72)
+    (setq git-commit-style-convention-checks
+          '('non-empty-second-line 'overlong-summary-line)))
 
 (use-package magit-svn
   :ensure t
