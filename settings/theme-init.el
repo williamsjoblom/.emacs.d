@@ -39,19 +39,19 @@
   (minions-mode 1))
 
 (let ((h (system-name)))
-  (cond ((string= h "tesla")   ;; Home
+  (cond ((at-home-p)
          (set-face-attribute 'default nil
                              :family "Iosevka"
                              :height 110
                              :weight 'bold
                              :width 'normal))
-        ((string= h "maxwell") ;; Thinkpad
-          (set-face-attribute 'default nil
+        ((at-thinkpad-p)
+         (set-face-attribute 'default nil
                               :family "Iosevka"
                               :height 100
                               :weight 'bold
                               :width 'normal))
-         ((string= h "wilsj")  ;; Work
+         ((at-work-p)
           (set-face-attribute 'default nil
                               :family "Iosevka"
                               :height 100

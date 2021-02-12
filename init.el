@@ -1,3 +1,13 @@
+;; Machine predicates.
+(defun at-home-p ()
+  (string= (system-name) "tesla"))
+
+(defun at-thinkpad-p ()
+  (string= (system-name) "maxwell"))
+
+(defun at-work-p ()
+  (string= (system-name) "wilsj"))
+
 ;; Bump up the gc-cons-threshold to 256MB during the first 3 seconds
 ;; after startup. The value is bumped to shave of .5 seconds at
 ;; startup and then restored to avoid noticable GC pauses during

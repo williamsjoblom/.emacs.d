@@ -28,7 +28,11 @@
   (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
   (add-to-list 'hl-todo-keyword-faces '("BEWARE" . "#aa0000"))
   (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000"))
-  (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393")))
+  (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393"))
+  (when (at-work-p)
+    (add-to-list 'hl-todo-keyword-faces '("GIVEN" . "#ECEFF4"))
+    (add-to-list 'hl-todo-keyword-faces '("WHEN" . "#E5E9F0"))
+    (add-to-list 'hl-todo-keyword-faces '("GIVEN" . "#D8DEE9"))))
 
 (use-package highlight-escape-sequences
   :ensure t

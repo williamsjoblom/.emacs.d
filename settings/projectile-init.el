@@ -1,6 +1,6 @@
 (use-package magit
   :ensure t
-  (when (string= (system-name) "wilsj")
+  (when (at-work-p)
     (setq git-commit-summary-max-length 50)
     (setq git-commit-fill-column 72)
     (setq git-commit-style-convention-checks
