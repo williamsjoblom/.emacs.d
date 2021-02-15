@@ -45,16 +45,7 @@ default browser"
   (local-set-key (kbd "C-c c h") 'my/python-coverage-open-html))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
-;; (use-package anaconda-mode
-;;   :ensure t
-;;   :hook ((python-mode . anaconda-mode)
-;;          (python-mode . my/python-mode-hook)))
 
-;; (use-package company-anaconda
-;;   :after anaconda-mode
-;;   :ensure t
-;;   :config
-;;   '(add-to-list 'company-backends 'company-anaconda))
 
 (setq python-shell-interpreter "python3")
 
