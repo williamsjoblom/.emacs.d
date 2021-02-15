@@ -62,10 +62,14 @@ python2 instead of python3"
   (lsp)
   (company-mode)
   (column-number-mode)
-  (local-set-key (kbd "C-M-k") 'my/python-block-comment)
+  ;; LSP (that I feel uncomfortable lifting out globally):
+  (local-set-key (kbd "C-c s") 'lsp-ivy-workspace-symbol)
+  ;; Coverage:
   (local-set-key (kbd "C-c c c") 'my/python-coverage-current-buffer)
   (local-set-key (kbd "C-c c r") 'my/python-coverage-pop-up-report)
-  (local-set-key (kbd "C-c c h") 'my/python-coverage-open-html))
+  (local-set-key (kbd "C-c c h") 'my/python-coverage-open-html)
+  ;; Documentation:
+  (local-set-key (kbd "C-M-k") 'my/python-block-comment))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 

@@ -12,6 +12,10 @@
   :config
   (ivy-rich-mode 1))
 
+(use-package lsp-ivy
+  :ensure t
+  :after ivy lsp)
+
 (use-package swiper
   :ensure t
   :after ivy
