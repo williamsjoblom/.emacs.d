@@ -34,6 +34,22 @@ default browser"
     (insert stars)
     (end-of-line 0)))
 
+(setq my/python-interpreter-prefix
+      (if (at-work-p) "cbrun x86_64 " ""))
+
+(defun my/run-python ()
+  "Wrapper around `run-python' which, given a prefix arg, starts
+python2 instead of python3"
+  (interactive)
+  (setq python-shell-interpreter
+        (concat my/python-interpreter-prefix
+                (if (equal current-prefix-arg nil)
+                    "python3"
+                  "python2")))
+  (call-interactively 'run-python))
+
+(define-key python-mode-map (kbd "C-c C-p") 'my/run-python)
+
 (defun my/python-mode-hook ()
   (require 'lsp-pyright)
   (lsp)
@@ -49,18 +65,5 @@ default browser"
   (local-set-key (kbd "C-M-k") 'my/python-block-comment))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
-;; (use-package anaconda-mode
-;;   :ensure t
-;;   :hook ((python-mode . anaconda-mode)
-;;          (python-mode . my/python-mode-hook)))
-
-;; (use-package company-anaconda
-;;   :after anaconda-mode
-;;   :ensure t
-;;   :config
-;;   '(add-to-list 'company-backends 'company-anaconda))
-
-(setq python-shell-interpreter "python3")
-
 
 (provide 'python-init)
