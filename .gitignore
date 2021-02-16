@@ -25,6 +25,7 @@ tramp
 tutorial/
 var/
 workspace/
+url/
 
 # Ignore API keys stored in secret.el
 settings/secret.el
