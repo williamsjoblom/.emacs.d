@@ -34,28 +34,25 @@ default browser"
     (insert stars)
     (end-of-line 0)))
 
-(setq my/python-interpreter-prefix
-      (if (at-work-p) "cbrun x86_64 " ""))
+;; (setq my/python-interpreter-prefix
+;;       (if (at-work-p) "cbrun x86_64 " ""))
 
-(require 'subr-x)
-(defun my/run-python ()
-  "Wrapper around `run-python' which, given a prefix arg, starts
-python2 instead of python3"
-  (interactive)
-  (let* ((interpreter (if current-prefix-arg "python2" "python3"))
-         (command (if (at-work-p)
-                      `("cbrun" "x86_64" ,interpreter "-i")
-                    `(,interpreter "-i"))))
-    (setq python-shell-interpreter (car command))
-    (setq python-shell-interpreter-args
-          (string-join (cdr command) " ")))
-  (setq current-prefix-arg nil) ; Inhibit prefix arg for `run-python'.
-  (call-interactively 'run-python))
+;; (require 'subr-x)
+;; (defun my/run-python ()
+;;   "Wrapper around `run-python' which, given a prefix arg, starts
+;; python2 instead of python3"
+;;   (interactive)
+;;   (let* ((interpreter (if current-prefix-arg "python2" "python3"))
+;;          (command (if (at-work-p)
+;;                       `("cbrun" "x86_64" ,interpreter "-i")
+;;                     `(,interpreter "-i"))))
+;;     (setq python-shell-interpreter (car command))
+;;     (setq python-shell-interpreter-args
+;;           (string-join (cdr command) " ")))
+;;   (setq current-prefix-arg nil) ; Inhibit prefix arg for `run-python'.
+;;   (call-interactively 'run-python))
 
-
-(my/run-python)
-
-(define-key python-mode-map (kbd "C-c C-p") 'my/run-python)
+;; (define-key python-mode-map (kbd "C-c C-p") 'my/run-python)
 
 (defun my/python-mode-hook ()
   (require 'lsp-pyright)
