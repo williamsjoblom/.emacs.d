@@ -1,16 +1,21 @@
+(setq lsp-keymap-prefix "C-c l")
 (use-package lsp-mode
-  :after yasnippet
+  :after yasnippet which-key
   :ensure t
   :bind (:map lsp-mode-map
               ("M-i" . xref-find-definitions)
               ("M-I" . xref-find-definitions-other-window)
               ("C-M-i" . xref-pop-marker-stack)
               ("C-c r" . lsp-rename))
-  :config
+  :hook (lsp-mode . lsp-enable-which-key-integration)
+  :init
+  (which-key-mode)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-completion-provider :capf)
   (setq lsp-enable-on-type-formatting nil)
-  (setq lsp-enable-indentation nil))
+  (setq lsp-enable-indentation nil)
+  :config
+  (define-key lsp-mode-map (kbd lsp-keymap-prefix) lsp-command-map))
 
 (use-package lsp-ui
   :ensure t
