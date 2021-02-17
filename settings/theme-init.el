@@ -43,7 +43,7 @@
          (set-face-attribute 'default nil
                              :family "Iosevka"
                              :height 110
-                             :weight 'bold
+                             :weight 'normal
                              :width 'normal))
         ((at-thinkpad-p)
          (set-face-attribute 'default nil
