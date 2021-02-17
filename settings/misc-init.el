@@ -6,6 +6,11 @@
 (use-package all-the-icons
   :ensure t)
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-setup-side-window-right-bottom))
+
 (use-package dashboard
   :ensure t
   :after all-the-icons projectile
