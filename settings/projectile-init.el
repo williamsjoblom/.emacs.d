@@ -2,10 +2,10 @@
   :ensure t
   :init
   (when (at-work-p)
-    (setq git-commit-summary-max-length 50)
-    (setq git-commit-fill-column 72)
-    (setq git-commit-style-convention-checks
-          '('non-empty-second-line 'overlong-summary-line))))
+    (setq git-commit-summary-max-length 50
+          git-commit-fill-column 72
+          git-commit-style-convention-checks '('non-empty-second-line
+                                               'overlong-summary-line))))
 
 (use-package magit-svn
   :ensure t

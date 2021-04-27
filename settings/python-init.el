@@ -21,6 +21,14 @@ default browser"
     (shell-command (concat "coverage html -d " dir))
     (shell-command (concat "xdg-open " (expand-file-name "index.html" dir)))))
 
+(defun my/python-vermin-file ()
+  "Run vermin on the currently visited file, showing the results
+in the echo area."
+  (interactive)
+  (message (string-trim
+            (shell-command-to-string
+             (concat "vermin " (buffer-file-name))))))
+
 (defun my/python-block-comment ()
   (interactive)
   (beginning-of-line)
@@ -65,9 +73,20 @@ default browser"
   (local-set-key (kbd "C-c c c") 'my/python-coverage-current-buffer)
   (local-set-key (kbd "C-c c r") 'my/python-coverage-pop-up-report)
   (local-set-key (kbd "C-c c h") 'my/python-coverage-open-html)
+  (local-set-key (kbd "C-c v") 'my/python-vermin-file)
   ;; Documentation:
-  (local-set-key (kbd "C-M-k") 'my/python-block-comment))
+  (local-set-key (kbd "C-M-k") 'my/python-block-comment)
+  (local-set-key (kbd "M-o") 'cendio/find-other-python-file)
+  (local-set-key (kbd "M-O") 'cendio/find-other-python-file-other-window))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
+
+; (setq dap-python-debugger 'debugpy)
+
+; (dap-register-debug-template "Attach to vsmserver"
+;                              (list :type "python"
+;                                    :request "attach"
+;                                    :connect (list :host "localhost"
+;                                                   :port 5678)))
 
 (provide 'python-init)

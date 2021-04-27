@@ -9,7 +9,7 @@
 (use-package which-key
   :ensure t
   :config
-  (which-key-setup-side-window-right-bottom))
+  (which-key-setup-side-window-bottom))
 
 (use-package dashboard
   :ensure t
@@ -25,6 +25,11 @@
                           (bookmarks . 5)
                           (agenda . 5))))
 
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode))
+
 (use-package hl-todo
   :ensure t
   :hook (prog-mode . hl-todo-mode)
@@ -33,11 +38,7 @@
   (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
   (add-to-list 'hl-todo-keyword-faces '("BEWARE" . "#aa0000"))
   (add-to-list 'hl-todo-keyword-faces '("DEPRECATED" . "#aa0000"))
-  (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393"))
-  (when (at-work-p)
-    (add-to-list 'hl-todo-keyword-faces '("GIVEN" . "#ECEFF4"))
-    (add-to-list 'hl-todo-keyword-faces '("WHEN" . "#E5E9F0"))
-    (add-to-list 'hl-todo-keyword-faces '("GIVEN" . "#D8DEE9"))))
+  (add-to-list 'hl-todo-keyword-faces '("REFACTOR" . "#cc9393")))
 
 (use-package highlight-escape-sequences
   :ensure t

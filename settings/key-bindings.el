@@ -59,9 +59,6 @@
 (global-set-key (kbd "<f8>") (lambda () (interactive) (bookmark-jump "f8")))
 (global-set-key (kbd "<f9>") (lambda () (interactive) (bookmark-jump "f9")))
 (global-set-key (kbd "<f10>") (lambda () (interactive) (bookmark-jump "f10")))
-(global-set-key (kbd "<f11>") (lambda () (interactive) (bookmark-jump "f11")))
-(global-set-key (kbd "<f12>") (lambda () (interactive) (bookmark-jump "f12")))
-
 
 (global-set-key (kbd "M-<f1>") (lambda () (interactive) (bookmark-set "f1")))
 (global-set-key (kbd "M-<f2>") (lambda () (interactive) (bookmark-set "f2")))
@@ -73,7 +70,5 @@
 (global-set-key (kbd "M-<f8>") (lambda () (interactive) (bookmark-set "f8")))
 (global-set-key (kbd "M-<f9>") (lambda () (interactive) (bookmark-set "f9")))
 (global-set-key (kbd "M-<f10>") (lambda () (interactive) (bookmark-set "f10")))
-(global-set-key (kbd "M-<f11>") (lambda () (interactive) (bookmark-set "f11")))
-(global-set-key (kbd "M-<f12>") (lambda () (interactive) (bookmark-set "f12")))
 
 (provide 'key-bindings)

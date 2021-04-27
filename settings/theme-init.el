@@ -16,15 +16,25 @@
 ;;   :config
 ;;   (load-theme 'dakrone-light t))
 
-(use-package nord-theme
-  :ensure t
-  :config
+;; (use-package nord-theme
+;;   :ensure t
+;;   :config
+;;   (if (daemonp)
+;;       (add-hook 'after-make-frame-functions
+;;                 (lambda (frame)
+;;                   (select-frame frame)
+;;                   (load-theme 'nord t)))
+;;     (load-theme 'nord t)))
+
+(use-package spacemacs-theme
+  :defer t
+  :init
   (if (daemonp)
       (add-hook 'after-make-frame-functions
                 (lambda (frame)
                   (select-frame frame)
-                  (load-theme 'nord t)))
-    (load-theme 'nord t)))
+                  (load-theme 'spacemacs-light t)))
+    (load-theme 'spacemacs-light t)))
 
 (use-package moody
   :ensure t
@@ -55,7 +65,7 @@
           (set-face-attribute 'default nil
                               :family "Iosevka"
                               :height 100
-                              :weight 'demibold
+                              :weight 'normal
                               :width 'normal))))
 
 (setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
