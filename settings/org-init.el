@@ -24,6 +24,9 @@
 (setq org-format-latex-options
       (plist-put org-format-latex-options :scale 1.25))
 
+(defun open-todos-other-frame ()
+  (interactive)
+  (find-file-other-frame "~/org/todo.org"))
 (defun my/org-mode-hook ()
   (interactive)
   (org-bullets-mode 1)

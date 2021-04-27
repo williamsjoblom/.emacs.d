@@ -41,9 +41,18 @@
 ;; Save system clipboard to kill ring before kill.
 (setq save-interprogram-paste-before-kill t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq-default fill-column 80)
+
+;; Skip the step of writing "yes <return>" and settle with writing "y" instead
+;; for yes/no prompts.
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Shrink left fringe!
+(set-window-fringes nil 5 nil nil t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scrolling
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq scroll-margin 0)
 
