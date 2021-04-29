@@ -10,6 +10,7 @@
   :ensure t
   :after ivy
   :config
+  (setq ivy-rich-parse-remote-buffer nil) ; Make tramp SNAP!
   (ivy-rich-mode 1))
 
 (use-package lsp-ivy
