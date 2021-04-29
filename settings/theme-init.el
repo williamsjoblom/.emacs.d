@@ -27,8 +27,8 @@
 ;;     (load-theme 'nord t)))
 
 (use-package spacemacs-theme
-  :defer t
-  :init
+  :ensure t
+  :config
   (if (daemonp)
       (add-hook 'after-make-frame-functions
                 (lambda (frame)
