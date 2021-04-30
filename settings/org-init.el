@@ -13,7 +13,6 @@
 
 ;; Prettify symbols.
 (setq org-pretty-entities t
-      org-hide-emphasis-markers t
       org-fontify-whole-heading-line t
       org-src-tab-acts-natively t
       org-src-fontify-natively t
