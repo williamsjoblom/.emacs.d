@@ -53,6 +53,10 @@
 ;; Case sensitive search
 (setq case-fold-search nil)
 
+(add-hook 'prog-mode-hook
+          '(lambda ()
+             (setq-local show-trailing-whitespace t)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scrolling
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
