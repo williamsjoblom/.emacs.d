@@ -119,13 +119,8 @@
 
 (require 'cendio-emacs nil 'noerror)
 
-
 ;; Load API keys from secret.el if present on the system.
 (require 'secret nil 'noerror)
-
-(setq pike-format-executable
-      "/home/williams/workbench/work/tools/format/pike-format.pike")
-(require 'pike-format nil 'noerror)
 
 (require 'key-bindings)
 
