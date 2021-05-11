@@ -103,11 +103,22 @@
 (require 'latex-init)
 (require 'java-init)
 (require 'avy-init)
-(require 'cendio-init)
 
 (require 'kattis)
 
 (require 'moinmoin-mode nil 'noerror)
+
+;; Work related thingies:
+(setq bug-reference-url-format
+      "https://www.cendio.com/bugzilla/show_bug.cgi?id=%s")
+(setq ctc-path "/local/home/wilsj/ctc/")
+(setq tl-prefix "/opt/thinlinc/")
+
+(setq cendio-emacs-dir (expand-file-name "cendio-emacs" user-emacs-directory))
+(add-to-list 'load-path cendio-emacs-dir)
+
+(require 'cendio-emacs nil 'noerror)
+
 
 ;; Load API keys from secret.el if present on the system.
 (require 'secret nil 'noerror)
