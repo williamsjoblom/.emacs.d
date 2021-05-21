@@ -38,7 +38,7 @@
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
 (setq org-todo-keywords
-      '((sequence "TODO" "|" "VERIFY" "DONE")))
+      '((sequence "TODO" "DOING" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 (setq org-log-done 'time)
 
 (defun org-summary-todo (n-done n-not-done)
