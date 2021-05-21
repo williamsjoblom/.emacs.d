@@ -76,8 +76,13 @@ in the echo area."
   (local-set-key (kbd "C-c v") 'my/python-vermin-file)
   ;; Documentation:
   (local-set-key (kbd "C-M-k") 'my/python-block-comment)
-  (local-set-key (kbd "M-o") 'cendio/find-other-python-file)
-  (local-set-key (kbd "M-O") 'cendio/find-other-python-file-other-window))
+
+  ;; Cendio:
+  (eval-after-load 'cendio-emacs
+    '(progn
+       (local-set-key (kbd "M-o") 'cendio/find-other-python-file)
+       (local-set-key (kbd "M-O") 'cendio/find-other-python-file-other-window)
+       (local-set-key (kbd "C-c C-i") 'cendio/install-current-buffer))))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
