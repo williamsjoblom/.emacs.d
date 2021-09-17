@@ -9,7 +9,7 @@
       (window-resize nil (* 4 (window-total-height)))))
   (cons msg code))
 
-;; Open compilation buffers on the right-hand side.
+;; Open compilation buffers on the bottom side.
 (add-to-list 'display-buffer-alist
              '("\\*Compilation\\*" display-buffer-in-side-window
                (side . bottom)

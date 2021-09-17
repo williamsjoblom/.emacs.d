@@ -1,10 +1,20 @@
 (use-package ivy
   :ensure t
+  :bind (:map global-map
+              ("C-x c" . ivy-resume))
   :init
   (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
   :config
   (ivy-mode 1))
+
+(defun my/ivy-rich-switch-buffer-icon (candidate)
+  (with-current-buffer
+      (get-buffer candidate)
+    (let ((icon (all-the-icons-icon-for-mode major-mode)))
+      (if (symbolp icon)
+          (all-the-icons-icon-for-mode 'fundamental-mode)
+        icon))))
 
 (use-package ivy-rich
   :ensure t
@@ -28,7 +38,9 @@
   :ensure t
   :after ivy
   :bind (:map global-map ("M-x" . counsel-M-x))
-  :bind (:map minibuffer-local-map ("C-r" . counsel-minibuffer-history)))
+  :bind (:map minibuffer-local-map ("C-r" . counsel-minibuffer-history))
+  :config
+  (counsel-mode 1))
 
 (use-package counsel-tramp
   :ensure t

@@ -26,15 +26,15 @@
 ;;                   (load-theme 'nord t)))
 ;;     (load-theme 'nord t)))
 
-(use-package spacemacs-theme
-  :ensure t
-  :config
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-                (lambda (frame)
-                  (select-frame frame)
-                  (load-theme 'spacemacs-light t)))
-    (load-theme 'spacemacs-light t)))
+;; (use-package spacemacs-theme
+;;   :ensure t
+;;   :config
+;;   (if (daemonp)
+;;       (add-hook 'after-make-frame-functions
+;;                 (lambda (frame)
+;;                   (select-frame frame)
+;;                   (load-theme 'spacemacs-light t)))
+;;     (load-theme 'spacemacs-light t)))
 
 (use-package moody
   :ensure t

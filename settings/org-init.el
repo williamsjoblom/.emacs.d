@@ -17,7 +17,7 @@
       org-src-tab-acts-natively t
       org-src-fontify-natively t
       org-fontify-quote-and-verse-blocks t
-      org-ellipsis "  ")
+      org-ellipsis "↴")
 
 ;; Increase size of latex previews.
 (setq org-format-latex-options
@@ -26,6 +26,7 @@
 (defun open-todos-other-frame ()
   (interactive)
   (find-file-other-frame "~/org/todo.org"))
+
 (defun my/org-mode-hook ()
   (interactive)
   (org-bullets-mode 1)
@@ -33,7 +34,8 @@
   (setq-local line-spacing 0.1)
   (setq-local left-margin-width 2)
   (setq-local right-margin-width 2)
-  (linum-mode -1))
+  (linum-mode -1)
+  (bug-reference-mode))
 
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
@@ -45,6 +47,15 @@
   "Switch entry to DONE when all subentries are done, to TODO otherwise."
   (let (org-log-done org-log-states)   ; turn off logging
     (org-todo (if (= n-not-done 0) "DONE" "VERIFY" "TODO"))))
+
+;; (defun my/org-utf8-checkbox (checkbox)
+;;   (case checkbox
+;;         (on "☑")
+;;         (trans "☐")
+;;         (off "☒")
+;;         (t "")))
+;; (defadvice org-html-checkbox (around bugzilla activate)
+;;   (setq ad-return-value (my/org-utf8-checkbox (ad-get-arg 0))))
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
@@ -65,12 +76,12 @@
 (set-face-attribute 'org-level-1 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.4)
+                    :height 1.0)
 
 (set-face-attribute 'org-level-2 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.1)
+                    :height 1.0)
 
 (set-face-attribute 'org-level-3 nil
                     :weight 'semi-light
@@ -94,10 +105,10 @@
                     :strike-through t)
 
 (set-face-attribute 'org-block-begin-line nil
-                    :height 0.85)
+                    :height 1.0)
 
 (set-face-attribute 'org-block-end-line nil
-                    :height 0.85)
+                    :height 1.0)
 
 (set-face-attribute 'org-done nil
                     :strike-through t)

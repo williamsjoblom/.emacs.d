@@ -56,6 +56,11 @@
   :ensure t
   :mode "\\.csv\\'")
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 (defun my/add-systemd-service-boilerplate ()
   "Add systemd service boilerplate to an empty file if its
 extension is '.service"

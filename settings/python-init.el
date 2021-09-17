@@ -82,7 +82,10 @@ in the echo area."
     '(progn
        (local-set-key (kbd "M-o") 'cendio/find-other-python-file)
        (local-set-key (kbd "M-O") 'cendio/find-other-python-file-other-window)
-       (local-set-key (kbd "C-c C-i") 'cendio/install-current-buffer))))
+       (local-set-key (kbd "C-c C-i") 'cendio/install-current-buffer)
+       (local-set-key (kbd "C-c t t") 'cendio/python-unit-test-run-test)
+       (local-set-key (kbd "C-c t c") 'cendio/python-unit-test-run-class)
+       (local-set-key (kbd "C-c t f") 'cendio/python-unit-test-run-file))))
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
