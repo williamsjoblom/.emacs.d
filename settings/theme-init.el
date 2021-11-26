@@ -16,15 +16,15 @@
 ;;   :config
 ;;   (load-theme 'dakrone-light t))
 
-;; (use-package nord-theme
-;;   :ensure t
-;;   :config
-;;   (if (daemonp)
-;;       (add-hook 'after-make-frame-functions
-;;                 (lambda (frame)
-;;                   (select-frame frame)
-;;                   (load-theme 'nord t)))
-;;     (load-theme 'nord t)))
+(use-package nord-theme
+  :ensure t
+  :config
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (load-theme 'nord t)))
+    (load-theme 'nord t)))
 
 ;; (use-package spacemacs-theme
 ;;   :ensure t

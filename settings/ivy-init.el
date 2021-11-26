@@ -1,12 +1,15 @@
 (use-package ivy
   :ensure t
+  :demand
   :bind (:map global-map
               ("C-x c" . ivy-resume))
   :init
   (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
   :config
-  (ivy-mode 1))
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
 
 (defun my/ivy-rich-switch-buffer-icon (candidate)
   (with-current-buffer
@@ -46,7 +49,9 @@
   :ensure t
   :after counsel
   :bind (:map global-map
-	      ("C-x t" . counsel-tramp)))
+	      ("C-x t" . counsel-tramp))
+  :config
+  (setq tramp-default-method "ssh"))
 
 (use-package counsel-projectile
   :ensure t
