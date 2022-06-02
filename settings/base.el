@@ -57,6 +57,10 @@
           '(lambda ()
              (setq-local show-trailing-whitespace t)))
 
+;; Assume a tiled window manager at work and disable all window decorations
+(when (at-work-p)
+  (set-frame-parameter nil 'undecorated t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scrolling
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
