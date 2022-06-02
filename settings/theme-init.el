@@ -64,8 +64,8 @@
                               :width 'normal))
          ((at-work-p)
           (set-face-attribute 'default nil
-                              :family "Iosevka"
-                              :height 100
+                              :family "JetBrains Mono"
+                              :height 90
                               :weight 'normal
                               :width 'normal))))
 
