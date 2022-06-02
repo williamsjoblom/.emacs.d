@@ -23,6 +23,9 @@
 (setq org-format-latex-options
       (plist-put org-format-latex-options :scale 1.25))
 
+;; Also bound to C-'.
+(define-key org-mode-map (kbd "C-,") nil)
+
 (defun open-todos-other-frame ()
   (interactive)
   (find-file-other-frame "~/org/todo.org"))
