@@ -78,7 +78,7 @@ in the echo area."
   (local-set-key (kbd "C-M-k") 'my/python-block-comment)
 
   ;; Cendio:
-  (eval-after-load 'cendio-emacs
+  (eval-after-load 'cendio-emacs-base
     '(progn
        (local-set-key (kbd "M-o") 'cendio/find-other-python-file)
        (local-set-key (kbd "M-O") 'cendio/find-other-python-file-other-window)
