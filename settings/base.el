@@ -75,3 +75,15 @@
 (setq jit-lock-defer-time 0)
 
 (provide 'base)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Long-line optimizations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-so-long-mode 1)
+
+;; Force left-to-right text to reduce number of line scans.
+(setq-default bidi-paragraph-direction 'left-to-right)
+
+;; Inhibit bidirectional paren algoritm.
+(setq bidi-inhibit-bpa t)
