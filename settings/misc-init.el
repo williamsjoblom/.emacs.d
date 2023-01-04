@@ -32,7 +32,8 @@
 
 (use-package hl-todo
   :ensure t
-  :hook (prog-mode . hl-todo-mode)
+  :hook ((prog-mode . hl-todo-mode)
+         (conf-mode . hl-todo-mode))
   :config
   (customize-set-variable 'hl-todo-highlight-punctuation ":!.")
   (add-to-list 'hl-todo-keyword-faces '("WARNING" . "#cc0000"))
