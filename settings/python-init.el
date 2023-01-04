@@ -62,6 +62,14 @@ in the echo area."
 
 ;; (define-key python-mode-map (kbd "C-c C-p") 'my/run-python)
 
+(use-package pip-requirements
+  :ensure t)
+
+(use-package python-black
+  :after python
+  :ensure t
+  :hook (python-mode . python-black-on-save-mode-enable-dwim))
+
 (defun my/python-mode-hook ()
   (require 'lsp-pyright)
   (lsp)
