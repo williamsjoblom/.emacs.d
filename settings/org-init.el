@@ -1,15 +1,8 @@
 (use-package org-bullets
   :ensure t)
 
-(use-package epresent
-  :ensure t
-  :config
-  (defun my/epresent-start-presentation-hook ()
-    (linum-mode -1)
-    (visual-line-mode))
-  (add-hook 'epresent-start-presentation-hook
-            'my/epresent-start-presentation-hook)
-  (setq epresent-mode-line nil))
+(use-package ox-jira
+  :ensure t)
 
 ;; Prettify symbols.
 (setq org-pretty-entities t
@@ -18,6 +11,10 @@
       org-src-fontify-natively t
       org-fontify-quote-and-verse-blocks t
       org-ellipsis "↴")
+
+;; Automatically export to kill ring (for simple export of notes to slack, jira
+;; etc.)
+(setq org-export-copy-to-kill-ring 'if-interactive)
 
 ;; Increase size of latex previews.
 (setq org-format-latex-options
@@ -89,7 +86,7 @@
 (set-face-attribute 'org-level-3 nil
                     :weight 'semi-light
                     :slant 'normal
-                    :height 1.05)
+                    :height 1.0)
 
 (set-face-attribute 'org-level-4 nil
                     :weight 'semi-light
