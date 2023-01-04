@@ -6,7 +6,7 @@
   (string= (system-name) "maxwell"))
 
 (defun at-work-p ()
-  (string= (system-name) "wilsj"))
+  (string= (system-name) "williams"))
 
 ;; Bump up the gc-cons-threshold to 256MB during the first 3 seconds
 ;; after startup. The value is bumped to shave of .5 seconds at
@@ -107,13 +107,13 @@
 (require 'moinmoin-mode nil 'noerror)
 
 ;; Work related thingies:
-(setq bug-reference-url-format
-      "https://www.cendio.com/bugzilla/show_bug.cgi?id=%s")
-(setq ctc-path "/local/home/wilsj/ctc/")
-(setq tl-prefix "/opt/thinlinc/")
-
-(setq cendio-emacs-dir (expand-file-name "cendio-emacs" user-emacs-directory))
-(add-to-list 'load-path cendio-emacs-dir)
+(setq bug-reference-bug-regexp "\\(\\(\[A-Z][A-Z0-9\]+\\)-\\(\[0-9\]+\\)\\)")
+(defun my/bug-reference-url ()
+  (let ((project (match-string 2))
+        (number  (match-string 3)))
+    (concat "https://bugs.opera.com/projects/" project "/issues/"
+            project "-" number)))
+(setq bug-reference-url-format #'my/bug-reference-url)
 
 (require 'cendio-emacs-base nil 'noerror)
 (require 'cendio-bz nil 'noerror)
@@ -138,7 +138,19 @@
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "c0a0c2f40c110b5b212eb4f2dad6ac9cac07eb70380631151fa75556b0100063" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "1d78d6d05d98ad5b95205670fe6022d15dabf8d131fe087752cc55df03d88595" "b583823b9ee1573074e7cbfd63623fe844030d911e9279a7c8a5d16de7df0ed0" "9129c2759b8ba8e8396fe92535449de3e7ba61fd34569a488dd64e80f5041c9f" default))
  '(hl-todo-highlight-punctuation ":!.")
  '(package-selected-packages
-   '(exec-path-from-shell speed-type dired-narrow editorconfig po-mode python-pytest ayu-theme spacemacs-theme github-theme string-inflection fill-column-indicator htmlize which-key expand-region org-bullets multiple-cursors matlab-mode minions moody doom-modeline poet-theme highlight-escape-sequences gruvbox-theme hl-todo highlight2clipboard dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company)))
+   '(restclient-jq ox-slack vue-mode ox-jira puppet-mode python-black pip-requirements speed-type dired-narrow editorconfig po-mode python-pytest ayu-theme spacemacs-theme github-theme string-inflection fill-column-indicator htmlize which-key expand-region org-bullets multiple-cursors matlab-mode minions moody doom-modeline poet-theme highlight-escape-sequences gruvbox-theme hl-todo highlight2clipboard dashboard all-the-icons counsel-tramp yasnippet counsel-spotify ivy-rich gist glsl-mode company-anaconda anaconda-mode kotlin-mode flycheck-kotlin cmake-font-lock rjsx-mode dap-mode projectile-ripgrep flycheck flycheck-mode lsp-ui cquery company-lsp use-package swiper company))
+ '(safe-local-variable-values
+   '((eval when
+           (and
+            (not
+             (eq major-mode 'conf-windows-mode))
+            (buffer-file-name)
+            (file-regular-p
+             (buffer-file-name))
+            (string-match-p "^[^.].*\\.ini"
+                            (file-name-nondirectory
+                             (buffer-file-name))))
+           (conf-windows-mode)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
