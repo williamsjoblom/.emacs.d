@@ -87,4 +87,9 @@ WantedBy=multi-user.target"))
   :config
   (define-auto-insert "\\.service$" [my/add-systemd-service-boilerplate]))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+
 (provide 'misc-init)
