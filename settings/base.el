@@ -38,6 +38,8 @@
 ;; trailing whitespace when opened.
 (add-hook 'prog-mode-hook 'maybe-add-delete-trailing-whitespace-hook)
 
+(setq sentence-end-double-space nil)
+
 ;; Save system clipboard to kill ring before kill.
 (setq save-interprogram-paste-before-kill t)
 
@@ -54,7 +56,7 @@
 (setq case-fold-search nil)
 
 (add-hook 'prog-mode-hook
-          '(lambda ()
+          #'(lambda ()
              (setq-local show-trailing-whitespace t)))
 
 ;; Assume a tiled window manager at work and disable all window decorations

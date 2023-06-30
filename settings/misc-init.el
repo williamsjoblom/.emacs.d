@@ -48,14 +48,24 @@
 (use-package expand-region
   :ensure t
   :config
-  (global-set-key (kbd "C-\\") 'er/expand-region))
+  (global-set-key (kbd "C-=") 'er/expand-region))
+
+(defun my/restclient-response-mode-hook ()
+  "Disable eldoc in restclient responses to avoid any language
+server message area resize popping."
+  (eldoc-mode -1))
 
 (use-package restclient
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'restclient-response-mode-hook 'my/restclient-response-mode-hook))
 
 (use-package csv-mode
   :ensure t
   :mode "\\.csv\\'")
+
+(use-package puppet-mode
+  :ensure t)
 
 (use-package editorconfig
   :ensure t

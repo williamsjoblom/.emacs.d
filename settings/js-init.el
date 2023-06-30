@@ -1,5 +1,5 @@
 (defun setup-work-node-path ()
-  (let ((node-path (expand-file-name "~/.nvm/versions/node/v14.21.1/bin/")))
+  (let ((node-path (expand-file-name "~/.nvm/versions/node/v18.12.1/bin/")))
     (unless (member node-path exec-path)
       (setq exec-path (append exec-path `(,node-path)))
       (setenv "PATH" (concat (getenv "PATH") ":" node-path)))))

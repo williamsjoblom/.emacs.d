@@ -65,7 +65,7 @@
          ((at-work-p)
           (set-face-attribute 'default nil
                               :family "JetBrains Mono"
-                              :height 90
+                              :height 100
                               :weight 'normal
                               :width 'normal))))
 

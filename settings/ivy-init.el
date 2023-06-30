@@ -43,7 +43,13 @@
   :bind (:map global-map ("M-x" . counsel-M-x))
   :bind (:map minibuffer-local-map ("C-r" . counsel-minibuffer-history))
   :config
-  (counsel-mode 1))
+  (counsel-mode 1)
+
+  ; `counsel-rg' doesn't show partial results in case rg exits with a non-zero
+  ; exitabo-abo/swiper/issues/2339. Hence -- let's wrap rg to always exit with 0
+  (setq counsel-rg-base-command
+        "rg --max-columns 240 --with-filename --no-heading \
+ --line-number --color never %s || true"))
 
 (use-package counsel-tramp
   :ensure t

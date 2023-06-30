@@ -21,7 +21,8 @@
   :ensure t
   :after lsp-mode
   :bind (:map lsp-ui-mode-map
-              ("C-c R" . lsp-ui-peek-find-references))
+              ("C-c R" . lsp-ui-peek-find-references)
+              ("M-RET" . lsp-execute-code-action))
   :config
   (lsp-ui-sideline-enable nil)
   (setq lsp-prefer-flymake nil)

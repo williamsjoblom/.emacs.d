@@ -11,6 +11,10 @@
   :ensure t
   :after magit)
 
+(use-package forge
+  :ensure t
+  :after magit)
+
 (use-package diff-hl
   :ensure t
   :hook ((prog-mode . diff-hl-mode)

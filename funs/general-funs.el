@@ -59,12 +59,17 @@ current buffer's, reload dir-locals."
         (when (equal default-directory dir))
         (reload-dir-locals-current-buffer)))))
 
+(defun current-line-empty-p ()
+  (save-excursion
+    (beginning-of-line)
+    (looking-at-p "[[:blank:]]*$")))
 
 ;; Insert C doc comment.
 (defun c-doc-comment ()
   (interactive)
   (beginning-of-line)
-  (open-line 1)
+  (unless (current-line-empty-p)
+    (open-line 1))
   (indent-according-to-mode)
   (let* ((indent (current-column)))
     (insert "/**\n")
