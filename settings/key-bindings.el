@@ -71,4 +71,7 @@
 (global-set-key (kbd "M-<f9>") (lambda () (interactive) (bookmark-set "f9")))
 (global-set-key (kbd "M-<f10>") (lambda () (interactive) (bookmark-set "f10")))
 
+;; Global bind for opening notmuch
+(global-set-key (kbd "C-x m") 'notmuch)
+
 (provide 'key-bindings)

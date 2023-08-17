@@ -103,6 +103,7 @@
 (require 'latex-init)
 (require 'java-init)
 (require 'avy-init)
+(require 'email-init)
 
 (require 'moinmoin-mode nil 'noerror)
 
