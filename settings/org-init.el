@@ -72,43 +72,11 @@
                                               (match-end 1)
                                               "•"))))))
 
-;; Faces
-(set-face-attribute 'org-level-1 nil
-                    :weight 'semi-light
-                    :slant 'normal
-                    :height 1.0)
-
-(set-face-attribute 'org-level-2 nil
-                    :weight 'semi-light
-                    :slant 'normal
-                    :height 1.0)
-
-(set-face-attribute 'org-level-3 nil
-                    :weight 'semi-light
-                    :slant 'normal
-                    :height 1.0)
-
-(set-face-attribute 'org-level-4 nil
-                    :weight 'semi-light
-                    :slant 'normal
-                    :height 1.0)
-
-(set-face-attribute 'org-level-5 nil
-                    :weight 'semi-light
-                    :slant 'normal
-                    :height 1.0)
-
 (set-face-attribute 'org-quote nil
                     :slant 'italic)
 
 (set-face-attribute 'org-done nil
                     :strike-through t)
-
-(set-face-attribute 'org-block-begin-line nil
-                    :height 1.0)
-
-(set-face-attribute 'org-block-end-line nil
-                    :height 1.0)
 
 (set-face-attribute 'org-done nil
                     :strike-through t)
