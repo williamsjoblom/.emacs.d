@@ -27,6 +27,13 @@
   (setq notmuch-show-logo nil)
   (define-key 'notmuch-show-part-map "d" 'my/notmuch-show-view-as-patch))
 
+(use-package notmuch-indicator
+  :ensure t
+  :config
+  (setq notmuch-indicator-args
+        '((:terms "tag:unread and tag:inbox" :label "📥 " :face bold)))
+  (notmuch-indicator-mode))
+
 (setq mail-user-agent 'message-user-agent)
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-stream-type 'starttls
