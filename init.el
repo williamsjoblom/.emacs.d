@@ -68,6 +68,8 @@
 ;; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
 
+;;; TODO: `use-package' is included in Emacs 29. Once Emacs 29 is generally
+;;; available, this can be removed.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
