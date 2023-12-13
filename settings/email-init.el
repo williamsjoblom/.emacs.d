@@ -25,6 +25,7 @@
   :config
   (setq notmuch-fcc-dirs "sent +sent -unread -inbox")
   (setq notmuch-show-logo nil)
+  (setq notmuch-hello-auto-refresh t)
   (define-key 'notmuch-show-part-map "d" 'my/notmuch-show-view-as-patch))
 
 (use-package notmuch-indicator
