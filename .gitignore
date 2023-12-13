@@ -29,3 +29,6 @@ url/
 
 # Ignore API keys stored in secret.el
 settings/secret.el
+
+# Ignore tree-sitter .so files
+tree-sitter/

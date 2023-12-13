@@ -106,6 +106,7 @@
 (require 'java-init)
 (require 'avy-init)
 (require 'email-init)
+(require 'treesit-init)
 
 (require 'moinmoin-mode nil 'noerror)
 
