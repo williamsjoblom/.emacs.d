@@ -5,7 +5,7 @@
 (setq inhibit-splash-screen t)
 
 ;; Line numbering
-(global-linum-mode t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Disable ear damage
 (setq visible-bell t)

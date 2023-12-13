@@ -34,7 +34,6 @@
   (setq-local line-spacing 0.1)
   (setq-local left-margin-width 2)
   (setq-local right-margin-width 2)
-  (linum-mode -1)
   (bug-reference-mode))
 
 (add-hook 'org-mode-hook 'my/org-mode-hook)
