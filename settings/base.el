@@ -6,6 +6,7 @@
 
 ;; Line numbering
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(setq-default display-line-numbers-width 2)
 
 ;; Disable ear damage
 (setq visible-bell t)
