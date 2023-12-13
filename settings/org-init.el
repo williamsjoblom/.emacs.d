@@ -12,6 +12,8 @@
       org-fontify-quote-and-verse-blocks t
       org-ellipsis "↴")
 
+(setq org-agenda-restore-windows-after-quit t)
+
 ;; Automatically export to kill ring (for simple export of notes to slack, jira
 ;; etc.)
 (setq org-export-copy-to-kill-ring 'if-interactive)
