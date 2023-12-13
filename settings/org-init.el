@@ -4,6 +4,21 @@
 (use-package ox-jira
   :ensure t)
 
+(use-package org2blog
+  :ensure t)
+
+(defun my/wp-body-id-filter (output backend info)
+  "Remove HTML attributes when exporting to wordpress"
+  (when (eq backend 'wp)
+    (replace-regexp-in-string " \\(id\\|class\\)=\"\\(outline-\\|text-\\|org\\)[[:alnum:]-]*\"" ""
+                              output t)))
+
+;; The default is to use "<td>". I don't want this as it renders badly on the
+;; ThinLinc blog.
+(setq org-html-table-header-tags '("<td scope=\"%s\"%s>" . "</td>"))
+
+(add-to-list 'org-export-filter-final-output-functions 'my/wp-body-id-filter)
+
 ;; Prettify symbols.
 (setq org-pretty-entities t
       org-fontify-whole-heading-line t
