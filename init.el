@@ -105,6 +105,7 @@
 (require 'latex-init)
 (require 'java-init)
 (require 'avy-init)
+(require 'languagetool-init nil 'noerror)
 (require 'email-init)
 (require 'treesit-init)
 

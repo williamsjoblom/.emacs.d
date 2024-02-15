@@ -60,4 +60,10 @@
 (define-key notmuch-message-mode-map (kbd "C-c C-s") 'my/insert-email-signature)
 (define-key notmuch-message-mode-map (kbd "C-c C-l") 'my/insert-lenny)
 
+;; LanguageTool API keys are in .gitignore, therefore LanguageTool may not
+;; always be available. If not, fall back of flyspell mode.
+(if (fboundp 'my/languagetool-server-mode)
+    (add-hook 'message-mode-hook 'my/languagetool-server-mode)
+  (add-hook 'message-mode-hook 'flyspell-mode))
+
 (provide 'email-init)

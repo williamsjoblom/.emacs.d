@@ -29,6 +29,7 @@ url/
 
 # Ignore API keys stored in secret.el
 settings/secret.el
+settings/languagetool-init.el
 
 # Ignore tree-sitter .so files
 tree-sitter/
