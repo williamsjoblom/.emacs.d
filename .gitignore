@@ -32,3 +32,6 @@ settings/secret.el
 
 # Ignore tree-sitter .so files
 tree-sitter/
+
+# Ignore org-roam database
+org-roam.db

@@ -1,3 +1,18 @@
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/roam")
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert))
+  :config
+  (org-roam-setup))
+
+(use-package org-roam-ui
+  :ensure t
+  :after org-roam
+  :bind (("C-c n g" . org-roam-ui-open)))
+
 (use-package org-bullets
   :ensure t)
 
