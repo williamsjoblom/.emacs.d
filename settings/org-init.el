@@ -55,6 +55,15 @@
 ;; Also bound to C-'.
 (define-key org-mode-map (kbd "C-,") nil)
 
+(defun my/org-open-at-point-same-window ()
+  (interactive)
+  (let ((org-link-frame-setup '((file . find-file))))
+        (org-open-at-point t)))
+
+(define-key org-mode-map (kbd "M-i") 'my/org-open-at-point-same-window)
+(define-key org-mode-map (kbd "C-M-i") 'org-mark-ring-goto)
+
+
 (defun open-todos-other-frame ()
   (interactive)
   (find-file-other-frame "~/org/todo.org"))
