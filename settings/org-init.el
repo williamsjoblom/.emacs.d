@@ -118,7 +118,4 @@
 (set-face-attribute 'org-done nil
                     :strike-through t)
 
-(set-face-attribute 'org-done nil
-                    :strike-through t)
-
 (provide 'org-init)
