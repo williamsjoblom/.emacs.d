@@ -88,15 +88,6 @@
   (let (org-log-done org-log-states)   ; turn off logging
     (org-todo (if (= n-not-done 0) "DONE" "VERIFY" "TODO"))))
 
-;; (defun my/org-utf8-checkbox (checkbox)
-;;   (case checkbox
-;;         (on "☑")
-;;         (trans "☐")
-;;         (off "☒")
-;;         (t "")))
-;; (defadvice org-html-checkbox (around bugzilla activate)
-;;   (setq ad-return-value (my/org-utf8-checkbox (ad-get-arg 0))))
-
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 (org-babel-do-load-languages
