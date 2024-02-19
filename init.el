@@ -112,13 +112,8 @@
 (require 'moinmoin-mode nil 'noerror)
 
 ;; Work related thingies:
-(setq bug-reference-bug-regexp "\\(\\(\[A-Z][A-Z0-9\]+\\)-\\(\[0-9\]+\\)\\)")
-(defun my/bug-reference-url ()
-  (let ((project (match-string 2))
-        (number  (match-string 3)))
-    (concat "https://bugs.opera.com/projects/" project "/issues/"
-            project "-" number)))
-(setq bug-reference-url-format #'my/bug-reference-url)
+(setq bug-reference-url-format "https://www.cendio.com/bugzilla/show_bug.cgi?id=%s")
+(setq bug-reference-bug-regexp "\\([Bb]ug[\s]\\([0-9]+\\)\\)")
 
 (require 'cendio-emacs-base nil 'noerror)
 (require 'cendio-bz nil 'noerror)
