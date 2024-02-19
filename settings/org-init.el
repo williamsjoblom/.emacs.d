@@ -70,6 +70,7 @@
 
 (defun my/org-mode-hook ()
   (interactive)
+  (org-indent-mode 1)
   (org-bullets-mode 1)
 
   (setq-local line-spacing 0.1)
