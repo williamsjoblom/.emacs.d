@@ -44,11 +44,11 @@
 (defun my/insert-email-signature ()
   (interactive)
   (save-excursion
-    (insert "Best regards\n")
+    (insert "Best regards,\n")
     (insert "--\n")
     (insert "William Sjöblom         Technical Presales\n")
     (insert "Cendio AB               https://cendio.com\n")
-    (insert "Teknikringen 8          https://twitter.com/ThinLinc\n")
+    (insert "Teknikringen 8          https://x.com/ThinLinc\n")
     (insert "583 30 Linköping        https://facebook.com/ThinLinc\n")
     (insert "Sweden\n")
     (insert "Phone: +46-13-214600\n")))
