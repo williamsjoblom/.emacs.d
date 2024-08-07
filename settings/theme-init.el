@@ -49,26 +49,6 @@
   :config
   (minions-mode 1))
 
-(let ((h (system-name)))
-  (cond ((at-home-p)
-         (set-face-attribute 'default nil
-                             :family "Iosevka"
-                             :height 110
-                             :weight 'normal
-                             :width 'normal))
-        ((at-thinkpad-p)
-         (set-face-attribute 'default nil
-                              :family "Iosevka"
-                              :height 100
-                              :weight 'bold
-                              :width 'normal))
-         ((at-work-p)
-          (set-face-attribute 'default nil
-                              :family "JetBrains Mono"
-                              :height 90
-                              :weight 'normal
-                              :width 'normal))))
-
 (setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
 
 (provide 'theme-init)
