@@ -1,10 +1,16 @@
+(defun switch-to-notes-buffer ()
+  (interactive)
+  (switch-to-buffer "*notes*")
+  (org-mode))
+
 (use-package org-roam
   :ensure t
   :custom
   (org-roam-directory "~/roam")
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert))
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n n" . switch-to-notes-buffer))
   :config
   (org-roam-setup))
 
