@@ -80,4 +80,14 @@
     (add-hook 'message-mode-hook 'my/languagetool-server-mode)
   (add-hook 'message-mode-hook 'flyspell-mode))
 
+(add-hook 'notmuch-hello-refresh-hook
+          (lambda ()
+            (if (and (eq (point) (point-min))
+                     (search-forward "Saved searches:" nil t))
+                (progn
+                  (forward-line)
+                  (widget-forward 1))
+              (if (eq (widget-type (widget-at)) 'editable-field)
+                  (beginning-of-line)))))
+
 (provide 'email-init)
