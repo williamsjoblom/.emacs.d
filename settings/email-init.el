@@ -63,6 +63,17 @@
 (define-key notmuch-show-mode-map "r" 'notmuch-show-reply)
 (define-key notmuch-show-mode-map "R" 'notmuch-show-reply-sender)
 
+(defun my/open-tracker-thread-in-browser ()
+  (interactive)
+  (let ((subject-line (notmuch-show-get-subject)))
+    (string-match "issue\\([[:digit:]]+\\)" subject-line)
+    (let ((issue-number (match-string 1 subject-line)))
+      (browse-url (concat "https://tracker.lkpg.cendio.se/tracker/issue"
+                          issue-number)))))
+
+(define-key notmuch-show-mode-map (kbd "C-c C-t")
+            'my/open-tracker-thread-in-browser)
+
 ;; LanguageTool API keys are in .gitignore, therefore LanguageTool may not
 ;; always be available. If not, fall back of flyspell mode.
 (if (fboundp 'my/languagetool-server-mode)
