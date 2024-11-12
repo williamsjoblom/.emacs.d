@@ -46,7 +46,7 @@
   (save-excursion
     (insert "Best regards,\n")
     (insert "--\n")
-    (insert "William Sjöblom         Technical Presales\n")
+    (insert "William Sjöblom\n")
     (insert "Cendio AB               https://cendio.com\n")
     (insert "Teknikringen 8          https://x.com/ThinLinc\n")
     (insert "583 30 Linköping        https://facebook.com/ThinLinc\n")
