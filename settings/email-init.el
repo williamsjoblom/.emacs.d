@@ -71,6 +71,20 @@
       (browse-url (concat "https://tracker.lkpg.cendio.se/tracker/issue"
                           issue-number)))))
 
+(defun my/set-correct-issue-tracker-recipient ()
+  "As the Cendio issue tracker handles sending email to correct
+recipients, rewrite To: to always point at the tracker for
+responses starting containing '[issueXXXX]'"
+  (save-excursion
+    (goto-char (point-min))
+    (let ((allowed-recipient "support@cendio.se"))
+      (when (re-search-forward "^Subject:.* \\[issue[0-9]+\\]" nil t)
+        (goto-char (point-min))
+        (when (re-search-forward "^To:.*" nil t)
+          (replace-match "To: support@cendio.se") t)))))
+
+(add-hook 'message-setup-hook #'my/set-correct-issue-tracker-recipient)
+
 (define-key notmuch-show-mode-map (kbd "C-c C-t")
             'my/open-tracker-thread-in-browser)
 
