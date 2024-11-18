@@ -14,7 +14,8 @@
 (defun my/dired-mode-hook ()
   (local-set-key (kbd "M-<") 'dired-beginning-of-buffer)
   (local-set-key (kbd "M->") 'dired-end-of-buffer)
-  (all-the-icons-dired-mode))
+  (unless (file-remote-p default-directory)
+    (all-the-icons-dired-mode)))
 
 (add-hook 'dired-mode-hook 'my/dired-mode-hook)
 
