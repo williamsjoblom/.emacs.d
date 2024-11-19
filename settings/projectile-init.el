@@ -7,6 +7,12 @@
           git-commit-style-convention-checks '('non-empty-second-line
                                                'overlong-summary-line))))
 
+(use-package magit-file-icons
+  :ensure t
+  :after magit
+  :init
+  (magit-file-icons-mode))
+
 (use-package magit-svn
   :ensure t
   :after magit)

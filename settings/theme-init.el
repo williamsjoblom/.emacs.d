@@ -1,31 +1,12 @@
-;; (use-package gruvbox-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'gruvbox-light-hard t)
-;;   (let ((line (face-attribute 'mode-line :underline)))
-;;     (set-face-attribute 'mode-line          nil :overline   line)
-;;     (set-face-attribute 'mode-line-inactive nil :overline   line)
-;;     (set-face-attribute 'mode-line-inactive nil :underline  line)
-;;     (set-face-attribute 'mode-line          nil :box        nil)
-;;     (set-face-attribute 'mode-line-inactive nil :box        nil)
-;;     (set-face-attribute 'mode-line          nil :background "#f2e5bc")
-;;     (set-face-attribute 'mode-line-inactive nil :background "#ebdbb2")))
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
 
-;; (use-package dakrone-light-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'dakrone-light t))
+  (load-theme 'doom-Iosvkem t)
 
-;; (use-package nord-theme
-;;   :ensure t
-;;   :config
-;;   (if (daemonp)
-;;       (add-hook 'after-make-frame-functions
-;;                 (lambda (frame)
-;;                   (select-frame frame)
-;;                   (load-theme 'nord t)))
-;;     (load-theme 'nord t)))
-(load-theme 'modus-vivendi t)
+  (doom-themes-org-config))
 
 ;; (use-package spacemacs-theme
 ;;   :ensure t
@@ -40,7 +21,7 @@
 (use-package moody
   :ensure t
   :config
-  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-front-space)
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
 
@@ -48,6 +29,11 @@
   :ensure t
   :config
   (minions-mode 1))
+
+(use-package solaire-mode
+  :ensure t
+  :config
+  (solaire-global-mode 1))
 
 (setq frame-title-format `("%b@emacs" ,(number-to-string emacs-major-version)))
 
