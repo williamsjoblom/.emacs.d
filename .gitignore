@@ -26,6 +26,7 @@ tutorial/
 var/
 workspace/
 url/
+bookmarks
 
 # Proprietary stuff
 cendio-emacs/
