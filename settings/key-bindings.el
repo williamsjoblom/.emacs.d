@@ -6,9 +6,6 @@
 (global-set-key (kbd "C-.") 'other-window)
 (global-set-key (kbd "C-,") 'prev-window)
 
-;; Unbind pageup and pagedown
-(global-unset-key (kbd "<next>"))
-(global-unset-key (kbd "<prior>"))
 
 ;; Don't show buffer kill prompt.
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
