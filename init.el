@@ -52,10 +52,14 @@
 (setq load-dir
       (expand-file-name "load" user-emacs-directory))
 
+;;;; Cendio company specific emacs configuration.
+(setq cendio-emacs-dir
+      (expand-file-name "cendio-emacs" user-emacs-directory))
 
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path funs-dir)
 (add-to-list 'load-path load-dir)
+(add-to-list 'load-path cendio-emacs-dir)
 
 ;;; Load configuration without dependencies.
 (require 'base)
@@ -114,6 +118,8 @@
 (setq bug-reference-url-format "https://www.cendio.com/bugzilla/show_bug.cgi?id=%s")
 (setq bug-reference-bug-regexp "\\([Bb]ug[\s]\\([0-9]+\\)\\)")
 
+(setq ctc-path "/home/wilsj/workbench/ctc")
+(setq tl-prefix "/opt/thinlinc/")
 (require 'cendio-emacs-base nil 'noerror)
 (require 'cendio-bz nil 'noerror)
 (global-set-key (kbd "C-x M-b") 'bz-transient)

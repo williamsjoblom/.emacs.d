@@ -27,6 +27,9 @@ var/
 workspace/
 url/
 
+# Proprietary stuff
+cendio-emacs/
+
 # Ignore API keys stored in secret.el
 settings/secret.el
 settings/languagetool-init.el
