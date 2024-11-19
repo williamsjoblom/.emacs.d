@@ -16,4 +16,14 @@
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")
      (cpp "https://github.com/tree-sitter/tree-sitter-cpp")))
 
+(setq major-mode-remap-alist
+      '((python-mode . python-ts-mode)
+        (yaml-mode . yaml-ts-mode)
+        (sh-mode . bash-ts-mode)
+        (js-mode . js-ts-mode)
+        (js-json-mode . json-ts-mode)
+        (css-mode . css-ts-mode)
+        (c++-mode . c++-ts-mode)
+        (c-mode . c-ts-mode)))
+
 (provide 'treesit-init)

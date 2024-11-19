@@ -25,8 +25,8 @@
 
 (use-package typescript-mode
   :ensure t
-  :mode ("\\.ts\\'" . typescript-mode)
-  :hook (typescript-mode . my/ts-hook))
+  :mode ("\\.ts\\'" . typescript-ts-mode)
+  :hook (typescript-ts-mode . my/ts-hook))
 
 (defun my/js-hook ()
   "Setup tide-mode and friends for current buffer"
@@ -44,7 +44,7 @@
   (tide-hl-identifier-mode 1)
   (company-mode 1))
 
-(add-hook 'js-mode-hook #'my/js-hook)
+(add-hook 'js-ts-mode-hook #'my/js-hook)
 
 ;; (use-package js2-mode
 ;;   :ensure t

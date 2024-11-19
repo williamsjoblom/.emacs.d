@@ -59,7 +59,7 @@ multiline comment prefix."
   (lsp)
   (lsp-mode))
 
-(add-hook 'c++-mode-hook 'my/c++-mode-hook)
-(add-hook 'c-mode-hook 'my/c++-mode-hook)
+(add-hook 'c++-ts-mode-hook 'my/c++-mode-hook)
+(add-hook 'c-ts-mode-hook 'my/c++-mode-hook)
 
 (provide 'c++-init)

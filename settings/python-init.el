@@ -95,7 +95,7 @@ in the echo area."
        (local-set-key (kbd "C-c t c") 'cendio/python-unit-test-run-class)
        (local-set-key (kbd "C-c t f") 'cendio/python-unit-test-run-file))))
 
-(add-hook 'python-mode-hook 'my/python-mode-hook)
+(add-hook 'python-ts-mode-hook 'my/python-mode-hook)
 
 ; (setq dap-python-debugger 'debugpy)
 
