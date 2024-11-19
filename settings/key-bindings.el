@@ -6,6 +6,8 @@
 (global-set-key (kbd "C-.") 'other-window)
 (global-set-key (kbd "C-,") 'prev-window)
 
+;; Unbind suspend
+(global-unset-key (kbd "C-z"))
 
 ;; Don't show buffer kill prompt.
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
