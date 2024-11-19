@@ -100,7 +100,6 @@
 (require 'cmake-init)
 (require 'python-init)
 (require 'glsl-init)
-(require 'pike-init)
 (require 'eshell-init)
 (require 'dired-init)
 (require 'multiple-cursors-init)
