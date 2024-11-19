@@ -41,25 +41,6 @@
       smtpmail-smtp-server "mail.cendio.se"
       smtpmail-smtp-service 587)
 
-(defun my/insert-email-signature ()
-  (interactive)
-  (save-excursion
-    (insert "Best regards,\n")
-    (insert "--\n")
-    (insert "William Sjöblom\n")
-    (insert "Cendio AB               https://cendio.com\n")
-    (insert "Teknikringen 8          https://x.com/ThinLinc\n")
-    (insert "583 30 Linköping        https://facebook.com/ThinLinc\n")
-    (insert "Sweden\n")
-    (insert "Phone: +46-13-214600\n")))
-
-(defun my/insert-lenny ()
-  (interactive)
-  (insert "( ͡° ͜ʖ ͡°)"))
-
-(define-key notmuch-message-mode-map (kbd "C-c C-s") 'my/insert-email-signature)
-(define-key notmuch-message-mode-map (kbd "C-c C-l") 'my/insert-lenny)
-
 (define-key notmuch-show-mode-map "r" 'notmuch-show-reply)
 (define-key notmuch-show-mode-map "R" 'notmuch-show-reply-sender)
 
