@@ -27,28 +27,10 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-ui-flycheck-enable t))
 
-;; (use-package cquery
-;;   :ensure t
-;;   :after lsp-ui company flycheck
-;;   :init
-;;   (setq cquery-executable "/usr/bin/cquery")
-;;   (setq company-transformers         nil
-;; 	company-lsp-async            t
-;; 	company-lsp-cache-candidates nil))
-
 (use-package ccls
   :ensure t
   :after lsp-ui company
   :init
   (setq ccls-executable "/usr/bin/ccls"))
-
-
-(use-package dap-mode
-  :ensure t
-  :after lsp-mode lsp-ui
-  :config
-  (setq dap-auto-configure-features '(sessions locals controls tooltip))
-  (require 'dap-gdb-lldb)
-  (dap-gdb-lldb-setup))
 
 (provide 'lsp-init)
