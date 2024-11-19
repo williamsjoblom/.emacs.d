@@ -6,7 +6,7 @@
   (string= (system-name) "maxwell"))
 
 (defun at-work-p ()
-  (string= (system-name) "williams"))
+  (string= (system-name) "wilsj.lkpg.cendio.se"))
 
 ;; Bump up the gc-cons-threshold to 256MB during the first 3 seconds
 ;; after startup. The value is bumped to shave of .5 seconds at
