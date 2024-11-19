@@ -93,4 +93,6 @@ WantedBy=multi-user.target"))
   :config
   (exec-path-from-shell-initialize))
 
+(add-hook 'rst-mode-hook 'diff-hl-mode)
+
 (provide 'misc-init)
