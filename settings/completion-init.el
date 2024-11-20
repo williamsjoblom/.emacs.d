@@ -56,4 +56,9 @@
                  nil
                  (window-parameters (mode-line-format . none)))))
 
+(use-package nerd-icons-completion
+  :ensure t
+  :config
+  (nerd-icons-completion-mode))
+
 (provide 'completion-init)
