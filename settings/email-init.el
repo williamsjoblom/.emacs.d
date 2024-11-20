@@ -65,6 +65,12 @@ responses starting containing '[issueXXXX]'"
 
 (add-hook 'message-setup-hook #'my/set-correct-issue-tracker-recipient)
 
+(defun my/ask-to-send-message ()
+  (unless (yes-or-no-p "Confirm sending message")
+    (error "Send inhibited")))
+
+(add-hook 'message-send-hook #'my/ask-to-send-message)
+
 (define-key notmuch-show-mode-map (kbd "C-c C-t")
             'my/open-tracker-thread-in-browser)
 
