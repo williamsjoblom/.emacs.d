@@ -56,6 +56,15 @@
                  nil
                  (window-parameters (mode-line-format . none)))))
 
+(use-package consult-projectile
+  :ensure t
+  :after projectile
+  :bind (:map projectile-command-map
+              ("p" . consult-projectile-switch-project)
+              ("f" . consult-projectile-find-file)
+              ("e" . consult-projectile-recentf)
+              ("b" . consult-projectile-switch-to-buffer)))
+
 (use-package nerd-icons-completion
   :ensure t
   :config
