@@ -1,3 +1,4 @@
+
 ;; Machine predicates.
 (defun at-home-p ()
   (string= (system-name) "tesla"))
@@ -105,7 +106,6 @@
 (require 'multiple-cursors-init)
 (require 'yas-init)
 (require 'latex-init)
-(require 'java-init)
 (require 'avy-init)
 (require 'languagetool-init nil 'noerror)
 (require 'email-init)
