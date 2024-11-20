@@ -1,68 +1,59 @@
-(use-package ivy
+;; Use vertico for neater presentation of completions.
+(use-package vertico
   :ensure t
-  :demand
-  :bind (:map global-map
-              ("C-x c" . ivy-resume))
   :init
-  (setq ivy-re-builders-alist '((t . ivy--regex-plus)))
-  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+  (vertico-mode))
+
+;; Persistent minibuffer history across sessions.
+(use-package savehist
+  :ensure t
+  :init
+  (savehist-mode))
+
+;; Use the `orderless' completion style for fuzzy completions.
+(use-package orderless
+  :ensure t
+  :custom
+  (orderless-component-separator #'orderless-escapable-split-on-space)
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
+
+;; Enable rich annotations using the Marginalia package
+(use-package marginalia
+  :ensure t
+  :init
+
+  ;; Projectile
+  (add-to-list 'marginalia-command-categories
+               '(projectile-find-file . project-file))
+  (add-to-list 'marginalia-command-categories
+               '(counsel-projectile-switch-to-buffer . buffer))
+  (add-to-list 'marginalia-command-categories
+               '(projectile-switch-project . project-file))
+
+  (marginalia-mode))
+
+(use-package embark
+  :ensure t
+
+  :bind
+  (("C-=" . embark-act)
+   ("C-M-=" . embark-dwim)
+   :map embark-file-map
+   ("S" . sudo-find-file))
+
+  :init
+
+  ;; Optionally replace the key help with a completing-read interface
+  (setq prefix-help-command #'embark-prefix-help-command)
+
   :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t))
 
-(defun my/ivy-rich-switch-buffer-icon (candidate)
-  (with-current-buffer
-      (get-buffer candidate)
-    (let ((icon (all-the-icons-icon-for-mode major-mode)))
-      (if (symbolp icon)
-          (all-the-icons-icon-for-mode 'fundamental-mode)
-        icon))))
-
-(use-package ivy-rich
-  :ensure t
-  :after ivy
-  :config
-  (setq ivy-rich-parse-remote-buffer nil) ; Make tramp SNAP!
-  (ivy-rich-mode 1))
-
-(use-package lsp-ivy
-  :ensure t
-  :after ivy lsp)
-
-(use-package swiper
-  :ensure t
-  :after ivy
-  :bind (:map global-map
-	      ("C-s" . swiper)
-	      ("C-S-s" . swiper-all)))
-
-(use-package counsel
-  :ensure t
-  :after ivy
-  :bind (:map global-map ("M-x" . counsel-M-x))
-  :bind (:map minibuffer-local-map ("C-r" . counsel-minibuffer-history))
-  :config
-  (counsel-mode 1))
-
-(use-package counsel-tramp
-  :ensure t
-  :after counsel
-  :bind (:map global-map
-	      ("C-x t" . counsel-tramp))
-  :config
-  (setq tramp-default-method "ssh"))
-
-(use-package counsel-projectile
-  :ensure t
-  :after projectile counsel
-  :config
-  (counsel-projectile-mode))
-
-(use-package counsel-spotify
-  :ensure t
-  :after counsel
-  :bind (:map global-map
-              ("C-x C-\\" . counsel-spotify-search-track)))
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
 
 (provide 'completion-init)
