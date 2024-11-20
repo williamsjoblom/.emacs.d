@@ -65,4 +65,4 @@
   :bind (:map global-map
               ("C-x C-\\" . counsel-spotify-search-track)))
 
-(provide 'ivy-init)
+(provide 'completion-init)

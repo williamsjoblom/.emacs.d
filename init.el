@@ -86,7 +86,7 @@
 
 (require 'theme-init)
 (require 'general-funs)
-(require 'ivy-init)
+(require 'completion-init)
 (require 'docker-init)
 (require 'company-init)
 (require 'lsp-init)
