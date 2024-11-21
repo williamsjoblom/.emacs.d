@@ -22,7 +22,7 @@
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
   :ensure t
-  :init
+  :config
 
   ;; Projectile
   (add-to-list 'marginalia-command-categories
