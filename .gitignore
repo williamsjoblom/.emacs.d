@@ -31,9 +31,6 @@ bookmarks
 # Proprietary stuff
 cendio-emacs/
 
-# Ignore savehist minibuffer history
-history
-
 # Ignore API keys stored in secret.el
 settings/secret.el
 settings/languagetool-init.el
