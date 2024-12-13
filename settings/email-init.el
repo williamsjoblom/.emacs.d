@@ -26,6 +26,9 @@
   (setq notmuch-fcc-dirs "sent +sent -unread -inbox")
   (setq notmuch-show-logo nil)
   (setq notmuch-hello-auto-refresh t)
+  (unless (at-work-p)
+    (setq notmuch-command
+          (expand-file-name "bin/work-notmuch.sh" user-emacs-directory)))
   (define-key 'notmuch-show-part-map "d" 'my/notmuch-show-view-as-patch))
 
 (use-package notmuch-indicator
