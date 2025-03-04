@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Roundup status subject
+# key: status
+# --
+[status=${1:$$(yas-choose-value'("waitforcustomer" "resolved" "unread" "open" "invalid" "standby"))}]
