@@ -11,12 +11,6 @@
   :config
   (which-key-setup-side-window-bottom))
 
-(use-package good-scroll
-  :ensure t
-  :hook ((prog-mode . good-scroll-mode))
-  :bind (("<next>" . good-scroll-up-full-screen)
-         ("<prior>" . good-scroll-down-full-screen)))
-
 (use-package dashboard
   :ensure t
   :after all-the-icons projectile
