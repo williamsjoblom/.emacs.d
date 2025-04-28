@@ -10,7 +10,7 @@
 (global-unset-key (kbd "C-z"))
 
 ;; Don't show buffer kill prompt.
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 
 ;; Revert buffer.
 (global-set-key (kbd "C-?") '(lambda ()
