@@ -1,17 +1,14 @@
 (use-package magit
   :ensure t
+  :after all-the-icons
+  :custom
+  (magit-format-file-function #'magit-format-file-all-the-icons)
   :init
   (when (at-work-p)
     (setq git-commit-summary-max-length 50
           git-commit-fill-column 72
           git-commit-style-convention-checks '('non-empty-second-line
                                                'overlong-summary-line))))
-
-(use-package magit-file-icons
-  :ensure t
-  :after magit
-  :init
-  (magit-file-icons-mode))
 
 (use-package magit-svn
   :ensure t
