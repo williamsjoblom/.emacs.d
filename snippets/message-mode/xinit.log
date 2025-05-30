@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ThinLinc xinit.log
+# key: eval
+# --
+/var/opt/thinlinc/sessions/${1:username}/last/xinit.log
