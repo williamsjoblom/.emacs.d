@@ -1,3 +1,6 @@
+(setq remote-notmuch-command
+      (expand-file-name "bin/work-notmuch.sh" user-emacs-directory))
+
 (defun my/notmuch-show-view-as-patch ()
   "View the the current message as a patch."
   (interactive)
@@ -27,8 +30,7 @@
   (setq notmuch-show-logo nil)
   (setq notmuch-hello-auto-refresh t)
   (unless (at-work-p)
-    (setq notmuch-command
-          (expand-file-name "bin/work-notmuch.sh" user-emacs-directory)))
+    (setq notmuch-command remote-notmuch-command))
   (define-key 'notmuch-show-part-map "d" 'my/notmuch-show-view-as-patch))
 
 (use-package notmuch-indicator
@@ -36,6 +38,8 @@
   :config
   (setq notmuch-indicator-args
         '((:terms "tag:unread and tag:inbox" :label "📥 " :face bold)))
+  (unless (at-work-p)
+    (setq notmuch-indicator-notmuch-binary remote-notmuch-command))
   (notmuch-indicator-mode))
 
 (setq mail-user-agent 'message-user-agent)
