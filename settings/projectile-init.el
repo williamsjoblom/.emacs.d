@@ -14,10 +14,13 @@
   :ensure t
   :after magit)
 
+(defun diff-hl-dired-mode-unless-remote ()
+    (unless (file-remote-p default-directory) (diff-hl-dired-mode)))
+
 (use-package diff-hl
   :ensure t
   :hook ((prog-mode . diff-hl-mode)
-         (dired-mode . diff-hl-dired-mode))
+         (dired-mode . diff-hl-dired-mode-unless-remote))
   :config
   (diff-hl-flydiff-mode))
 
@@ -31,9 +34,6 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-
-(defadvice projectile-project-root (around ignore-remote first activate)
-  (unless (file-remote-p default-directory) ad-do-it))
 
 (use-package projectile-ripgrep
   :ensure t
